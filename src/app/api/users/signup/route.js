@@ -13,6 +13,13 @@ export async function POST(NextRequest){
         const {username, email, password} = reqbody
         console.log(reqbody);
 
+        if (username === "" || email === "" || password === "") {
+            return NextResponse.json({
+                error: "Input is required",
+                Status: 400,
+            })
+        }
+
         const user = await User.findOne({email})
         if (user) {
             return NextResponse.json({
@@ -36,7 +43,7 @@ export async function POST(NextRequest){
 
         return NextResponse.json({
             message:"user saved sucessfully",
-            Status:"400",
+            Status:400,
             saveduser
         })
 
