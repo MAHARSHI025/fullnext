@@ -7,7 +7,11 @@ export const sendEmail = async ({ email, emailType, userId }) => {
         const hashedToken = await bcryptjs.hash(userId.toString(), 10);
 
         if (emailType === "VERIFY") {
-            await User.findByIdAndUpdate(userId, { verifytoken: hashedToken, verifytokenexpiry: Date.now() + 3600000 });
+            console.log("to verify email");
+            await User.findByIdAndUpdate(
+                userId,
+                { $set: { verifytoken: hashedToken, verifytokenexpiry: Date.now() + 3600000 } }
+            );
         }
 
         const transporter = nodemailer.createTransport({
@@ -26,7 +30,7 @@ export const sendEmail = async ({ email, emailType, userId }) => {
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
             text: "Hello world?", // plain text body
             html: `<b>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> 
-            to verify your email </b>`, // html body
+            to verify your email token=${hashedToken}</b>`, // html body
         });
 
         console.log("Email sent successfully:", mailResponse);
