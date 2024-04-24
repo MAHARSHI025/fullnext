@@ -13,11 +13,18 @@ export async function POST(NextRequest) {
         const { email, password } = reqbody
         console.log(reqbody);
 
+        if (email === "" || password === "") {
+            return NextResponse.json({
+                error:"Input required",
+                Status:200
+            })
+        }
+
         const user = await User.findOne({ email })
         if (!user) {
             console.log("User not found");
             return NextResponse.json({
-                message:"user not found",
+                error:"user not found",
                 Status:"200"
             })
         }
@@ -26,7 +33,7 @@ export async function POST(NextRequest) {
         if (!validpassword) {
             console.log("invalid password");
             return NextResponse.json({
-                message:"invalid password",
+                error:"invalid password",
                 Status:"200"
             })
         }

@@ -20,7 +20,7 @@ function Signup() {
 
       const toastId = toast.loading('Loading...');
       const response = await axios.post("/api/users/signup", user)
-      
+
       if (response.data.error === undefined) {
 
         toast.success("Register successfully" ,{id:toastId})
