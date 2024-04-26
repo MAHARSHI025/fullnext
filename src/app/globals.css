@@ -55,3 +55,18 @@ body{
   background-color: black;
   font-weight: 500;
 }
+.main{
+  background-color: #e4daaf;
+}
+.btn button{
+  border: 2px solid black;
+}
+
+.mainbtn{
+  background-color: black;
+  color: #ebe8dc;
+  margin-right: 0.5rem;
+}
+.subbtn{
+
+}

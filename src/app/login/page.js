@@ -51,7 +51,7 @@ function Login() {
             required
           />
         </form>
-        <button type="submit" onClick={onlogin} id='signup' className=' my-2'>login</button>
+        <button type="submit" onClick={onlogin} id='signup' className=' my-2'>Login</button>
       </div>
     </>
   )
