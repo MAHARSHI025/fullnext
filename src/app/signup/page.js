@@ -30,7 +30,7 @@ function Signup() {
 
       } else {
         console.log(response.data);
-        toast(response.data.error, { duration: 2000, id:toastId })
+        toast(response.data.error, { duration: 3000, id:toastId })
       }
 
     } catch (error) {
@@ -45,7 +45,7 @@ function Signup() {
       <Toaster />
       <div>
         <div className="formal" >
-          <form className="formal" >
+          <form className="formal" >  //TODO:"onsubmit feature"
             <h1>Signup</h1>
             <input type="text"
               value={user.username}

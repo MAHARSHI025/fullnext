@@ -10,7 +10,7 @@ function Login() {
 
   const [user, setuser] = useState({
     email: "",
-    password: ""
+    password: "",
   })
 
   const onlogin = async () => {
@@ -23,7 +23,7 @@ function Login() {
         toast.success("login successfully", { id: toastId })
       } else {
         console.log(response.data);
-        toast(response.data.error, { duration: 2000, id: toastId })
+        toast(response.data.error, { duration: 3000, id: toastId })
       }
 
     } catch (error) {
