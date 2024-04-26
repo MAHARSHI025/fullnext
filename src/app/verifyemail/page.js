@@ -5,14 +5,16 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function Verifyemail() {
 
+
     const [token, settoken] = useState("")
 
     const verifyemail = async () => {
-        
+
         const toastId = toast.loading('Loading...');
         try {
             const verify = await axios.post("/api/users/verifyemail", { token })
-            toast.success("Verify successfully", { id: toastId })
+            toast.success("Your email is Verified", { id: toastId })
+
 
         } catch (error) {
             console.log("error while verify email");
@@ -26,10 +28,10 @@ function Verifyemail() {
     }, [])
 
     return (
-        <div className=' flex justify-center items-center flex-col gap-2'>
+        <div className=' formal'>
             <Toaster/>
-            <h1>Verify Email</h1>
-            <button onClick={verifyemail} className=' border-2 border-gray-950 px-6 py-'>hello </button>
+            <h1 className=' font-bold text-4xl my-4'>Press Button to verify email</h1>
+            <button type="submit" onClick={verifyemail} id='signup' className=' my-2'>Verify email</button>
         </div>
     )
 }

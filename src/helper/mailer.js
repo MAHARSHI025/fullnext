@@ -28,9 +28,9 @@ export const sendEmail = async ({ email, emailType, userId }) => {
             from: 'mjcompany@gmail.com', // sender address
             to: email, // recipient email address
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
-            text: "Hello world?", // plain text body
-            html: `<h1>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a></h1>
-            to verify your email token=${hashedToken}  <b>Do not share your token </b>`, // html body
+            text: "Verify email", // plain text body
+            html: `<h2>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a></h2>
+            <h3>to verify your email token=${hashedToken}</h3>  <h4><b>Do not share your token to anyone.</b></h4>`, // html body
         });
 
         console.log("Email sent successfully:", mailResponse);

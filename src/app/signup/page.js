@@ -45,8 +45,8 @@ function Signup() {
       <Toaster />
       <div>
         <div className="formal" >
-          <form className="formal" >  
-            <h1>Signup</h1>
+          <form className=" flex justify-center items-center flex-col gap-2" >  
+            <h1 className=' font-bold text-4xl my-4'>Signup</h1>
             <input type="text"
               value={user.username}
               onChange={(e) => setuser({ ...user, username: e.target.value })}
@@ -66,7 +66,7 @@ function Signup() {
               required
             />
           </form>
-          <button type="submit" onClick={onsignup} id='signup'>Signup</button>
+          <button type="submit" onClick={onsignup} id='signup' className=' my-2'>Signup</button>
         </div>
       </div>
     </>

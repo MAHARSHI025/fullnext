@@ -34,10 +34,10 @@ function Login() {
 
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <div className="formal" >
-        <form className="formal" >
-          <h1>Login</h1>
+        <form className=" flex justify-center items-center flex-col gap-2" >
+          <h1 className=' font-bold text-4xl my-4'>Login</h1>
           <input type="email"
             value={user.email}
             onChange={(e) => setuser({ ...user, email: e.target.value })}
@@ -51,7 +51,7 @@ function Login() {
             required
           />
         </form>
-        <button type="submit" onClick={onlogin} id='signup'>login</button>
+        <button type="submit" onClick={onlogin} id='signup' className=' my-2'>login</button>
       </div>
     </>
   )

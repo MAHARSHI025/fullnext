@@ -40,15 +40,15 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .formal input{
   border: 2px solid black;
   padding: 0.2rem;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .formal button{
   border: 2px solid;
   padding: 0.1rem 1rem ;
-  border-radius: 10px;
+  border-radius: 5px;
 }
