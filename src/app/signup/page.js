@@ -11,7 +11,8 @@ function Signup() {
   const [user, setuser] = useState({
     email: "",
     username: "",
-    password: ""
+    password: "",
+    thought: "",
   })
 
   const onsignup = async () => {
@@ -23,14 +24,14 @@ function Signup() {
 
       if (response.data.error === undefined) {
 
-        toast.success("Register successfully" ,{id:toastId})
+        toast.success("Register successfully", { id: toastId })
         setTimeout(() => {
           router.push("/login")
         }, 2000);
 
       } else {
         console.log(response.data);
-        toast(response.data.error, { duration: 3000, id:toastId })
+        toast(response.data.error, { duration: 3000, id: toastId })
       }
 
     } catch (error) {
@@ -45,7 +46,7 @@ function Signup() {
       <Toaster />
       <div>
         <div className="formal" >
-          <form className=" flex justify-center items-center flex-col gap-2" >  
+          <form className=" flex justify-center items-center flex-col gap-2" >
             <h1 className=' font-bold text-4xl my-4'>Signup</h1>
             <input type="text"
               value={user.username}
@@ -65,6 +66,11 @@ function Signup() {
               placeholder='Password'
               required
             />
+            <textarea
+              rows="5"
+              value={user.thought}
+              onChange={(e) => setuser({ ...user, thought: e.target.value })}
+            ></textarea>
           </form>
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
         </div>

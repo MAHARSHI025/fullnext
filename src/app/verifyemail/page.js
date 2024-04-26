@@ -14,7 +14,7 @@ function Verifyemail() {
         try {
             const verify = await axios.post("/api/users/verifyemail", { token })
             toast.success("Your email is Verified", { id: toastId })
-
+            
 
         } catch (error) {
             console.log("error while verify email");

@@ -33,6 +33,7 @@
 
 body{
   color: black;
+  background-color: #fffbf0;
 }
 
 .formal{
@@ -46,6 +47,13 @@ body{
   border: 2px solid black;
   padding: 0.2rem;
   border-radius: 5px;
+  width: 15rem;
+}
+.formal textarea{
+  border: 2px solid black;
+  padding: 0.2rem;
+  border-radius: 5px;
+  width: 15rem;
 }
 .formal button{
   border: 2px solid black;
@@ -67,6 +75,16 @@ body{
   color: #ebe8dc;
   margin-right: 0.5rem;
 }
-.subbtn{
-
+.temp{
+  background-color: #e4daaf;
+}
+.temp h1{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.temp h2{
+  font-size: 0.8rem;
+}
+.upper h1{
+  margin-bottom: -5px;
 }

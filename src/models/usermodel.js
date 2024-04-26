@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { RequestCookiesAdapter } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 
 const userSchema = new mongoose.Schema({
     username:{
@@ -13,6 +12,10 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     password:{
+        type: String,
+        required: true,
+    }, 
+    thought:{
         type: String,
         required: true,
     }, 
