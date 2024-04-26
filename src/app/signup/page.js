@@ -45,7 +45,7 @@ function Signup() {
       <Toaster />
       <div>
         <div className="formal" >
-          <form className="formal" >  //TODO:"onsubmit feature"
+          <form className="formal" >  
             <h1>Signup</h1>
             <input type="text"
               value={user.username}

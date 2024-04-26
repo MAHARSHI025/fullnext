@@ -6,14 +6,14 @@ import toast, { Toaster } from 'react-hot-toast';
 function Verifyemail() {
 
     const [token, settoken] = useState("")
-    // const [verified, setverified] = useState(false)
 
     const verifyemail = async () => {
+        
         const toastId = toast.loading('Loading...');
         try {
             const verify = await axios.post("/api/users/verifyemail", { token })
-            // setverified(true)
             toast.success("Verify successfully", { id: toastId })
+
         } catch (error) {
             console.log("error while verify email");
             toast.error(error.message)
