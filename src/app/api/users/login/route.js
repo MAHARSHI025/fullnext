@@ -3,6 +3,7 @@ import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import { sendEmail } from "@/helper/mailer";
 
 connect()
 
@@ -38,6 +39,7 @@ export async function POST(NextRequest) {
             })
         }
         if (user.isverified === false) {
+            await sendEmail({email, emailType:"VERIFY", userId:user._id })
             console.log("User is not verified");
             return NextResponse.json({
                 error:"User is not verified",
