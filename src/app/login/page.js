@@ -20,7 +20,12 @@ function Login() {
       const response = await axios.post("/api/users/login", user)
 
       if (response.data.error === undefined) {
+        
         toast.success("login successfully", { id: toastId })
+        setTimeout(() => {
+          router.push("/thoughts")
+        }, 2000);
+        
       } else {
         console.log(response.data);
         toast.error(response.data.error, { duration: 3000, id: toastId })

@@ -38,9 +38,8 @@ function Thoughts() {
               <h2>{item.email}</h2>
             </div>
             <div>
-              <h1>Thought</h1>
-              <h2>{item.thought}</h2>
-              {/* <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ad?</h2> */}
+              <h2>Thought</h2>
+              <h1 className='texter'>{item.thought}</h1>
             </div>
           </div>
         ))}

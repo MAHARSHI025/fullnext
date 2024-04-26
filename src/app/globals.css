@@ -31,60 +31,74 @@
   }
 }
 
-body{
+body {
   color: black;
   background-color: #fffbf0;
 }
 
-.formal{
+.formal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-.formal input{
+
+.formal input {
   border: 2px solid black;
   padding: 0.2rem;
   border-radius: 5px;
   width: 15rem;
 }
-.formal textarea{
+
+.formal textarea {
   border: 2px solid black;
   padding: 0.2rem;
   border-radius: 5px;
   width: 15rem;
 }
-.formal button{
+
+.formal button {
   border: 2px solid black;
-  padding: 0.1rem 1rem ;
+  padding: 0.1rem 1rem;
   border-radius: 5px;
   color: white;
   background-color: black;
   font-weight: 500;
 }
-.main{
+
+.main {
   background-color: #e4daaf;
 }
-.btn button{
+
+.btn button {
   border: 2px solid black;
 }
 
-.mainbtn{
+.mainbtn {
   background-color: black;
   color: #ebe8dc;
   margin-right: 0.5rem;
 }
-.temp{
-  background-color: #e4daaf;
+
+.temp {
+  background-color: #e4daaf82;
+  border: 2px solid #77725e;
 }
-.temp h1{
+
+.temp h1 {
   font-size: 1.3rem;
   font-weight: bold;
 }
-.temp h2{
+
+.temp h2 {
   font-size: 0.8rem;
 }
-.upper h1{
+
+.upper h1 {
   margin-bottom: -5px;
+}
+
+.texter {
+  font-size: 1.2rem !important;
 }

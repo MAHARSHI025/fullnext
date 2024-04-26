@@ -24,6 +24,31 @@ export const sendEmail = async ({ email, emailType, userId }) => {
             }
         });
 
+        // const transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //         user: 'pateldeval2580@gmail.com', // Your Gmail email address
+        //         pass: 'pateldeval6020' // Your Gmail password or app-specific password
+        //     },
+        //     secure: true,
+        //     tls: {
+        //         rejectUnauthorized: false
+        //     }
+        // });
+
+        // const transporter = nodemailer.createTransport({
+        //     host: 'smtp.ethereal.email',
+        //     port: 587,
+        //     secure: false, // Use `false` for port 587
+        //     auth: {
+        //         user: 'garrison.metz@ethereal.email',
+        //         pass: '6WWJppruHqYQFz8wm3'
+        //     },
+        //     tls: {
+        //         rejectUnauthorized: false
+        //     }
+        // });
+
         const mailResponse = await transporter.sendMail({
             from: 'mjcompany@gmail.com', // sender address
             to: email, // recipient email address
