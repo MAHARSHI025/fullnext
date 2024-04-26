@@ -50,23 +50,23 @@ function Signup() {
             <input type="text"
               value={user.username}
               onChange={(e) => setuser({ ...user, username: e.target.value })}
-              placeholder='username'
+              placeholder='Username'
               required
             />
             <input type="email"
               value={user.email}
               onChange={(e) => setuser({ ...user, email: e.target.value })}
-              placeholder='email'
+              placeholder='Email'
               required
             />
             <input type="password"
               value={user.password}
               onChange={(e) => setuser({ ...user, password: e.target.value })}
-              placeholder='password'
+              placeholder='Password'
               required
             />
           </form>
-          <button type="submit" onClick={onsignup} id='signup' className=' my-2'>Signup</button>
+          <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
         </div>
       </div>
     </>

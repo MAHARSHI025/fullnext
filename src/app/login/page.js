@@ -23,7 +23,7 @@ function Login() {
         toast.success("login successfully", { id: toastId })
       } else {
         console.log(response.data);
-        toast(response.data.error, { duration: 3000, id: toastId })
+        toast.error(response.data.error, { duration: 3000, id: toastId })
       }
 
     } catch (error) {
@@ -41,13 +41,13 @@ function Login() {
           <input type="email"
             value={user.email}
             onChange={(e) => setuser({ ...user, email: e.target.value })}
-            placeholder='email'
+            placeholder='Email'
             required
           />
           <input type="password"
             value={user.password}
             onChange={(e) => setuser({ ...user, password: e.target.value })}
-            placeholder='password'
+            placeholder='Password'
             required
           />
         </form>
