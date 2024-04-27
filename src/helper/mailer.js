@@ -14,43 +14,33 @@ export const sendEmail = async ({ email, emailType, userId }) => {
             );
         }
 
-        const transporter = nodemailer.createTransport({
-            host: "sandbox.smtp.mailtrap.io",
-            port: 2525,
-            secure: false,
+        // fake
+        // const transport = nodemailer.createTransport({
+        //     host: "sandbox.smtp.mailtrap.io",
+        //     port: 2525,
+        //     auth: {
+        //       user: "ad6fed884e6d28",
+        //       pass: "36f9768b2e3e6f"
+        //     }
+        //   });
+
+        //original
+        var transport = nodemailer.createTransport({
+            // host: "smtp.mailtrap.io",
+            host: "live.smtp.mailtrap.io",
+            port: 587,
+            secure: false, // true for 465, false for other ports
             auth: {
-                user: "ad6fed884e6d28",
-                pass: "36f9768b2e3e6f"
+                user: "api",
+                pass: "dc51fdf11b4048ad712815cca1291da8"
+            },
+            tls: {
+                rejectUnauthorized: false // Add this line
             }
         });
 
-        // const transporter = nodemailer.createTransport({
-        //     service: 'gmail',
-        //     auth: {
-        //         user: 'pateldeval2580@gmail.com', // Your Gmail email address
-        //         pass: 'pateldeval6020' // Your Gmail password or app-specific password
-        //     },
-        //     secure: true,
-        //     tls: {
-        //         rejectUnauthorized: false
-        //     }
-        // });
-
-        // const transporter = nodemailer.createTransport({
-        //     host: 'smtp.ethereal.email',
-        //     port: 587,
-        //     secure: false, // Use `false` for port 587
-        //     auth: {
-        //         user: 'garrison.metz@ethereal.email',
-        //         pass: '6WWJppruHqYQFz8wm3'
-        //     },
-        //     tls: {
-        //         rejectUnauthorized: false
-        //     }
-        // });
-
-        const mailResponse = await transporter.sendMail({
-            from: 'mjcompany@gmail.com', // sender address
+        const mailResponse = await transport.sendMail({
+            from: 'Mjcompany@demomailtrap.com', // sender address
             to: email, // recipient email address
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
             text: "Verify email", // plain text body

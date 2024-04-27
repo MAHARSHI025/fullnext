@@ -70,6 +70,7 @@ function Signup() {
               rows="5"
               value={user.thought}
               onChange={(e) => setuser({ ...user, thought: e.target.value })}
+              placeholder='Enter your thought'
             ></textarea>
           </form>
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
