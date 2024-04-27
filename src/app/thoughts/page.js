@@ -27,12 +27,17 @@ function Thoughts() {
 
 
 
+
   return (
     <div>
       <Toaster />
+      <div className="options flex justify-end items-center gap-2 mx-4">
+        <input type="text" className='searcher' placeholder='Search user'/>
+        <button>=</button>
+      </div>
       <div className="card flex gap-4 justify-center p-4 flex-wrap">
         {apiData?.map(item => (
-          <div className="temp flex flex-col p-4 rounded-lg gap-4" key={item._id}>
+          <div className="temp flex flex-col p-4 rounded-lg gap-4" id='carder' key={item._id}>
             <div className='upper'>
               <h1>{item.username}</h1>
               <h2>{item.email}</h2>

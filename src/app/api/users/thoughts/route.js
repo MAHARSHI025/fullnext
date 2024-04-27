@@ -13,12 +13,13 @@ export async function POST(req){
         const token = cookieStore.get('token')
         console.log(token);
 
-        if (token === undefined) {
+        if (token === undefined || token === "") {
             return NextResponse.json({
                 error: "Unauthorize user",
                 Status: "400"
             })
         }
+
 
         const decodedtoken = jwt.verify(token.value, process.env.TOKENSECRET)
         // const consumer = await User.findById(decodedtoken?.id)

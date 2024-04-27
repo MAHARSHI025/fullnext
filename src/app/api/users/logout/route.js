@@ -1,8 +1,8 @@
 import { connect } from "@/dbconfig/dbconfig";
-import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from 'bcryptjs'
-import jwt from 'jsonwebtoken'
+
+import { cookies } from 'next/headers'
+
 
 connect()
 
@@ -13,7 +13,7 @@ export async function GET(NextRequest) {
             Status:"200"
         })
 
-        response.cookies.set("token","",{httpOnly:true})
+        response.cookies.delete("token") 
         
         return response
 

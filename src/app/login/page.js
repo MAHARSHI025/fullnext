@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from 'react'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
@@ -20,12 +21,12 @@ function Login() {
       const response = await axios.post("/api/users/login", user)
 
       if (response.data.error === undefined) {
-        
+
         toast.success("login successfully", { id: toastId })
         setTimeout(() => {
           router.push("/thoughts")
         }, 2000);
-        
+
       } else {
         console.log(response.data);
         toast.error(response.data.error, { duration: 3000, id: toastId })
@@ -36,6 +37,13 @@ function Login() {
       toast.error(error.message)
     }
   }
+
+  const onlogout = async()=>{
+    const response = await axios.get("/api/users/logout")
+    console.log(response);
+
+  }
+ 
 
   return (
     <>
@@ -57,6 +65,8 @@ function Login() {
           />
         </form>
         <button type="submit" onClick={onlogin} id='signup' className=' my-2'>Login</button>
+        <h1>or</h1>
+        <button type="submit" onClick={onlogout}  className=' logoutbtn'>Logout</button>
       </div>
     </>
   )

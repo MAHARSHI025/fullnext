@@ -36,6 +36,11 @@ body {
   background-color: #fffbf0;
 }
 
+.navbar{
+  background-color: #fffbf0;
+
+}
+
 .formal {
   display: flex;
   flex-direction: column;
@@ -101,4 +106,44 @@ body {
 
 .texter {
   font-size: 1.2rem !important;
+}
+
+.searcher {
+  color: black;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: transparent;
+  width: 8rem;
+}
+
+.options button {
+  background-color: black;
+  color: white;
+  font-size: larger;
+  border: 2px solid black;
+  padding: 0rem 0.8rem;
+  border-radius: 5px;
+}
+.drop{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 60%;
+}
+.logoutbtn{
+  background-color: transparent !important;
+  border: none !important;
+  color: black !important;
+}
+.lootie{
+  height: 20rem;
+}
+.area{
+  max-width: 50rem;
+}
+@media screen and (max-width:1200px ) {
+  .info2{
+    flex-wrap: wrap;
+  }
 }
