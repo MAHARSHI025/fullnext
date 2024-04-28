@@ -16,7 +16,14 @@ function Thoughts() {
       const thoughts = await axios.post("/api/users/thoughts")
       setApiData(thoughts.data.user)
       if (thoughts.data.error === "Unauthorize user") {
-        toast("Please Login First")
+        toast("Please Login First", {
+          style: {
+            fontSize:"1rem",
+            fontWeight:"800",
+            border: '2px solid #713200',
+            color: '#713200',
+          }
+        },)
         setTimeout(() => {
           router.push("/login")
         }, 4000);
@@ -32,7 +39,7 @@ function Thoughts() {
     <div>
       <Toaster />
       <div className="options flex justify-end items-center gap-2 mx-4">
-        <input type="text" className='searcher' placeholder='Search user'/>
+        <input type="text" className='searcher' placeholder='Search user' />
         <button>=</button>
       </div>
       <div className="card flex gap-4 justify-center p-4 flex-wrap">

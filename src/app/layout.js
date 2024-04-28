@@ -14,6 +14,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body className={inter.className}>
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+
+
         <Navbar></Navbar>
         {children}
       </body>

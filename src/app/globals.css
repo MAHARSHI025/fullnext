@@ -36,7 +36,7 @@ body {
   background-color: #fffbf0;
 }
 
-.navbar{
+.navbar {
   background-color: #fffbf0;
 
 }
@@ -74,6 +74,7 @@ body {
 
 .main {
   background-color: #e4daaf;
+  background-image: linear-gradient(180deg, #ebd28d, #423e2d);
 }
 
 .btn button {
@@ -125,46 +126,59 @@ body {
   padding: 0rem 0.8rem;
   border-radius: 5px;
 }
-.drop{
+
+.drop {
   display: none;
   flex-direction: column;
   position: absolute;
   left: 60%;
 }
-.logoutbtn{
+.downer{
+  background-color: #fffbf0;
+}
+.logoutbtn {
   background-color: transparent !important;
   border: none !important;
   color: black !important;
 }
-.info{
+
+.info {
   background-color: black;
+
   color: white;
   margin: 0%;
   padding: 1.2rem;
 }
-.bgier{
-  /* background-image: linear-gradient(180deg, #e4daaf, #4a4739, black); */
-  background-image: linear-gradient(180deg, #e4daaf, #83794e, #3b361c, black);
+
+.bgier {
+  background-image: linear-gradient(180deg, #423e2d, black);
 }
-.lootie{
+
+
+.lootie {
   height: 20rem;
 }
-.lootie2{
+
+.lootie2 {
   height: 15rem;
 }
-.area{
+
+.area {
   max-width: 40rem;
 }
+
 .line {
   border-left: 2px solid black;
   height: 10rem;
   width: 0;
 }
+
 hr {
   width: 2.5rem;
   border-color: black;
   background-color: black;
 }
+
 .number {
   font-size: 1.5rem;
   background-color: #724726;
@@ -173,27 +187,33 @@ hr {
   width: 3rem;
   border-radius: 100px;
 }
-.about{
- color: white;
- padding: 1rem;
+
+.about {
+  color: white;
+  padding: 1rem;
+  padding-top: 7rem !important;
   background-image: linear-gradient(180deg, black, #70653c);
 }
-@media screen and (max-width:1200px ) {
-  .info2{
+
+@media screen and (max-width:1200px) {
+  .info2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .btn{
+
+  .btn {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
   }
-  .lootie{
+
+  .lootie {
     margin-bottom: -2rem;
     margin-top: -1rem;
   }
-  .lootie2{
+
+  .lootie2 {
     margin: 1rem;
   }
 }

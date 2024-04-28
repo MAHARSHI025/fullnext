@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function Signup() {
 
@@ -74,6 +75,8 @@ function Signup() {
             ></textarea>
           </form>
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
+          <h1>or</h1>
+        <button type="submit"  className=' logoutbtn'><Link href={"/login"}>login</Link></button>
         </div>
       </div>
     </>

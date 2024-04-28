@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function Login() {
 
@@ -22,7 +23,13 @@ function Login() {
 
       if (response.data.error === undefined) {
 
-        toast.success("login successfully", { id: toastId })
+        toast.success("login successfully", { id: toastId }, {
+          style: {
+            fontSize:"1rem",
+            fontWeight:"800",
+            border: '2px solid green',
+          }
+        },)
         setTimeout(() => {
           router.push("/thoughts")
         }, 2000);
@@ -38,11 +45,7 @@ function Login() {
     }
   }
 
-  const onlogout = async()=>{
-    const response = await axios.get("/api/users/logout")
-    console.log(response);
 
-  }
  
 
   return (
@@ -66,7 +69,7 @@ function Login() {
         </form>
         <button type="submit" onClick={onlogin} id='signup' className=' my-2'>Login</button>
         <h1>or</h1>
-        <button type="submit" onClick={onlogout}  className=' logoutbtn'>Logout</button>
+        <button type="submit"  className=' logoutbtn'><Link href={"/signup"}>Signup</Link></button>
       </div>
     </>
   )
