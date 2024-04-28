@@ -136,14 +136,64 @@ body {
   border: none !important;
   color: black !important;
 }
+.info{
+  background-color: black;
+  color: white;
+  margin: 0%;
+  padding: 1.2rem;
+}
+.bgier{
+  /* background-image: linear-gradient(180deg, #e4daaf, #4a4739, black); */
+  background-image: linear-gradient(180deg, #e4daaf, #83794e, #3b361c, black);
+}
 .lootie{
   height: 20rem;
 }
+.lootie2{
+  height: 15rem;
+}
 .area{
-  max-width: 50rem;
+  max-width: 40rem;
+}
+.line {
+  border-left: 2px solid black;
+  height: 10rem;
+  width: 0;
+}
+hr {
+  width: 2.5rem;
+  border-color: black;
+  background-color: black;
+}
+.number {
+  font-size: 1.5rem;
+  background-color: #724726;
+  color: #F6FFEA;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100px;
+}
+.about{
+ color: white;
+ padding: 1rem;
+  background-image: linear-gradient(180deg, black, #70653c);
 }
 @media screen and (max-width:1200px ) {
   .info2{
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .lootie{
+    margin-bottom: -2rem;
+    margin-top: -1rem;
+  }
+  .lootie2{
+    margin: 1rem;
   }
 }
