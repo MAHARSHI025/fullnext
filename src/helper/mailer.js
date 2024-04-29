@@ -24,23 +24,23 @@ export const sendEmail = async ({ email, emailType, userId }) => {
         //     }
         //   });
 
-        //original
+        //original irij miem cunb lwyw
         var transport = nodemailer.createTransport({
-            // host: "smtp.mailtrap.io",
-            host: "live.smtp.mailtrap.io",
-            port: 587,
-            secure: false, // true for 465, false for other ports
+            host: "smtp.gmail.com",
+            service: "gmail",
+            port: 465,
+            secure: true, // true for 465, false for other ports
             auth: {
-                user: "api",
-                pass: "dc51fdf11b4048ad712815cca1291da8"
+                user: "maharshipatel3851@gmail.com",
+                pass: "irijmiemcunblwyw"
             },
             tls: {
-                rejectUnauthorized: false // Add this line
+                rejectUnauthorized: false // Add this line to bypass certificate validation
             }
         });
 
         const mailResponse = await transport.sendMail({
-            from: 'Mjcompany@demomailtrap.com', // sender address
+            from: 'Mjcompany.gmail.com', // sender address
             to: email, // recipient email address
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
             text: "Verify email", // plain text body
