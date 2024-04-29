@@ -74,7 +74,8 @@ body {
 
 .main {
   background-color: #e4daaf;
-  background-image: linear-gradient(180deg, #ebd28d, #423e2d);
+  background-image: linear-gradient(180deg, #a59463, #423e2d);
+  color: white;
 }
 
 .btn button {
@@ -194,6 +195,7 @@ hr {
   padding-top: 7rem !important;
   background-image: linear-gradient(180deg, black, #70653c);
 }
+
 
 @media screen and (max-width:1200px) {
   .info2 {

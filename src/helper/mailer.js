@@ -40,7 +40,7 @@ export const sendEmail = async ({ email, emailType, userId }) => {
         });
 
         const mailResponse = await transport.sendMail({
-            from: 'Mjcompany.gmail.com', // sender address
+            from: 'Mjcompany@gmail.com', // sender address
             to: email, // recipient email address
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
             text: "Verify email", // plain text body
