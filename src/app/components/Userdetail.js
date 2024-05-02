@@ -15,7 +15,7 @@ function Userdetail() {
         let detailer = async () => {
             try {
                 let detail = await axios.post("/api/users/user",)
-                let main = detail.data.userdetail
+                let main = detail.data.user
                 // console.log(detail);
 
                 setuserdata({

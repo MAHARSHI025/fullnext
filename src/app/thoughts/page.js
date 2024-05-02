@@ -4,6 +4,7 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Search from '../components/Search';
+import Link from 'next/link';
 
 
 function Thoughts() {
@@ -43,14 +44,18 @@ function Thoughts() {
   return (
     <div>
       <Toaster />
-      <div className="btnclass flex justify-center" >
+      <div className="btnclass flex justify-center gap-4" >
         <button className=' linebtn'  onClick={() => setShowDiv(!showDiv)}>Search user</button>
+        <Link href={"/profile"}><button className=' linebtn'>Profile</button></Link>
+        <Link href={"/profile"}><button className=' linebtn'>Update</button></Link>
+        
       </div>
 
       {showDiv && (
         <div className="midderplus" id="midderplus">
-          <div className="midder">
-            <Search></Search>
+          <div className="midder flex flex-col items-end p-2 border-2 border-black rounded-lg">
+            <button onClick={() => setShowDiv(!showDiv)}>#</button>
+            <Search ></Search>
           </div>
         </div>
       )}

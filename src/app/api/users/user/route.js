@@ -1,7 +1,8 @@
 import { connect } from "@/dbconfig/dbconfig";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, userAgentFromString } from "next/server";
 import jwt from 'jsonwebtoken'
 import { cookies } from "next/headers";
+import User from "@/models/usermodel";
 
 connect()
 
@@ -24,6 +25,8 @@ export async function POST(NextRequest) {
         let userdetail  = jwt.verify(tokenvalue,process.env.TOKENSECRET,)
         // console.log(userdetail);
 
+        let user = await User.findById(userdetail.id)
+
         if (!userdetail) {
             return NextResponse.json({
                 error:"user not found",
@@ -32,7 +35,8 @@ export async function POST(NextRequest) {
         }
 
         return NextResponse.json({
-            userdetail,
+            // userdetail,
+            user,
             message:"cookie found",
             Status: 200,
         })
