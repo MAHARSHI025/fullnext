@@ -61,7 +61,7 @@ function Thoughts() {
       )}
       <div className="card flex gap-4 justify-center p-4 flex-wrap">
         {apiData?.map(item => (
-          <div className="temp flex flex-col p-4 rounded-lg gap-4" id='carder' key={item._id}>
+          <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{backgroundImage: `linear-gradient(13deg, ${item.typer} , #e4daaf, transparent)`}} id='carder' key={item._id}>
             <div className='upper'>
               <h1>{item.username}</h1>
               <h2>{item.email}</h2>
@@ -69,6 +69,7 @@ function Thoughts() {
             <div>
               <h2>Thought</h2>
               <h1 className='texter'>{item.thought}</h1>
+              <h1 className='texter'>{item?.typer}</h1>
             </div>
           </div>
         ))}

@@ -14,6 +14,7 @@ function Signup() {
     username: "",
     password: "",
     thought: "",
+    typer: "transparent"
   })
 
   const onsignup = async () => {
@@ -73,10 +74,16 @@ function Signup() {
               onChange={(e) => setuser({ ...user, thought: e.target.value })}
               placeholder='Enter your thought'
             ></textarea>
+            <input
+              type="color"
+              name=""
+              id="typer"
+              onChange={(e) => setuser({ ...user, typer: e.target.value })}
+            />
           </form>
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
           <h1>or</h1>
-        <button type="submit"  className=' logoutbtn'><Link href={"/login"}>login</Link></button>
+          <button type="submit" className=' logoutbtn'><Link href={"/login"}>login</Link></button>
         </div>
       </div>
     </>

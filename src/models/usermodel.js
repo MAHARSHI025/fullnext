@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    typer:{
+        type: String,
+        default:"transparent",
+    },
     verifytoken: String,
     verifytokenexpiry: Date,
 })
