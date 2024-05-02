@@ -195,7 +195,28 @@ hr {
   padding-top: 7rem !important;
   background-image: linear-gradient(180deg, black, #70653c);
 }
-
+.midder{
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+}
+#midderplus{
+  display: flex;
+  justify-content: center;
+}
+.btnclass{
+  background-color: #423e2d;
+  margin: 0;
+  padding: 0.2rem;
+  /* overflow-x: scroll; */
+}
+.linebtn{
+  background-color: #e4daaf;
+  font-weight: 800;
+  padding: 0.1rem 1rem;
+  border-radius: 20px;
+  text-wrap: nowrap;
+}
 
 @media screen and (max-width:1200px) {
   .info2 {

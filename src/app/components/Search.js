@@ -20,7 +20,7 @@ function Search() {
 
         let responce = await axios.post("/api/users/profile", user)
         let main = responce.data.user
-        console.log(responce);
+        // console.log(responce);
         setuserdata(main)
 
         if (responce.data.error === "user not found") {
@@ -66,6 +66,8 @@ function Search() {
                     </div>
                 </div>
             </div>
+
+            
         </>
     )
 }

@@ -1,17 +1,17 @@
 import { connect } from "@/dbconfig/dbconfig";
 import User from "@/models/usermodel";
-import { NextRequest ,NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken"
 import { cookies } from "next/headers";
 
 connect()
 
-export async function POST(req){
+export async function POST(req) {
     try {
 
         const cookieStore = cookies()
         const token = cookieStore.get('token')
-        console.log(token);
+        // console.log(token);
 
         if (token === undefined || token === "") {
             return NextResponse.json({
@@ -24,13 +24,20 @@ export async function POST(req){
         const decodedtoken = jwt.verify(token.value, process.env.TOKENSECRET)
         // const consumer = await User.findById(decodedtoken?.id)
         // console.log(consumer);
-        
-        const user = await User.find().select("-password -isverified -verifytoken -verifytokenexpiry")
+
+        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry")
         // console.log(user);
 
+        const shuffledArray = user;
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        // console.log(shuffledArray);
+
         return NextResponse.json({
-            user,
-            message: "Authorize successfull",
+            shuffledArray,
+            message: "Authorized successfull",
             success: true
         })
 

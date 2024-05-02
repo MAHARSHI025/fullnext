@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
 import Search from '../components/Search'
+import Userdetail from '../components/Userdetail'
 
 function Page() {
   return (
-    <div className=' flex flex-col justify-end items-end'>
-        <Search ></Search>
+    <div className=' flex flex-col justify-center'>
+        <Userdetail></Userdetail>
     </div>
   )
 }
