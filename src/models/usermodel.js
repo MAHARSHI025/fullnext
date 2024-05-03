@@ -1,35 +1,39 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    username:{
+
+    username: {
         type: String,
         required: true,
         unique: true
     },
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true
     },
-    password:{
+    password: {
         type: String,
         required: true,
-    }, 
-    thought:{
+    },
+    thought: {
         type: String,
         required: true,
-    }, 
-    isverified:{
+    },
+    isverified: {
         type: Boolean,
         default: false
     },
-    typer:{
+    typer: {
         type: String,
-        default:"transparent",
+        default: "transparent",
     },
     verifytoken: String,
     verifytokenexpiry: Date,
-})
+}, {
+    timestamps: true
+}
+)
 
 const User = mongoose.models.users || mongoose.model("users", userSchema)
 

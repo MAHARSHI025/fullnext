@@ -9,7 +9,6 @@ export default function Home() {
 
 
       <div className="main flex justify-center gap-6 flex-wrap">
-        {/* <img src="/images/483013_5394652_949707_image.png" alt="" className=" h-60" /> */}
         <img src="/images/483013_5394652_949707_image-removebg-preview.png" alt="" className=" h-60" />
         <div className=" flex  flex-col justify-center gap-4">
           <h1 className=" text-center text-5xl font-bold">Thought is Forever</h1>
@@ -52,14 +51,14 @@ export default function Home() {
               <hr />
               <div className="text w-48 flex  flex-col justify-center items-center gap-2">
                 <h1 className=" text-xl font-bold">Signup or login</h1>
-                <h1 className=' text-center font-medium text-xs'>First I design my project in figma and made user-friendly websites.</h1>
+                <h1 className=' text-center font-medium text-xs'>Create an account or login. to get start your thought journey</h1>
               </div>
             </div>
           </div>
           <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">Put your Thought</h1>
-              <h1 className=' text-center font-medium text-xs'>Then I code basic structure of my website using html elements and css</h1>
+              <h1 className=' text-center font-medium text-xs'>Add your thought around the world and put your mood color</h1>
             </div>
             <hr />
             <div className="line"></div>
@@ -73,13 +72,13 @@ export default function Home() {
             <hr />
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">See World thinking</h1>
-              <h1 className=' text-center font-medium text-xs'>I make logic in javascript to perfome a better website experience for user</h1>
+              <h1 className=' text-center font-medium text-xs'>Explore how world thinking and get updated with time</h1>
             </div>
           </div>
           <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">Update thought</h1>
-              <h1 className=' text-center font-medium text-xs'>I choose react.js library to make web-app for my project. It was a sufficent library to code in js.</h1>
+              <h1 className=' text-center font-medium text-xs'>You can update your thought anytime you want.</h1>
             </div>
             <hr />
             <div className="line"></div>
@@ -93,7 +92,7 @@ export default function Home() {
             <hr />
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">Be exploring</h1>
-              <h1 className=' text-center font-medium text-xs'>Then I add tailwind css in my project for better looking website.</h1>
+              <h1 className=' text-center font-medium text-xs'>Visit the site and get new thought all the day.</h1>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Droper from '../components/Droper';
 
 function Signup() {
 
@@ -74,12 +75,25 @@ function Signup() {
               onChange={(e) => setuser({ ...user, thought: e.target.value })}
               placeholder='Enter your thought'
             ></textarea>
-            <input
-              type="color"
-              name=""
-              id="typer"
-              onChange={(e) => setuser({ ...user, typer: e.target.value })}
-            />
+            <div>
+            <Droper></Droper>
+
+            </div>
+
+            <div className=' flex flex-row justify-center items-center gap-2 flex-wrap'>
+              <h1>Get color as your mood</h1>
+              <input
+                type="color"
+                name=""
+                id="typer"
+                value={"#99876e"}
+                onChange={(e) => {
+                  setuser({ ...user, typer: e.target.value });
+                  document.getElementById('typer').value = e.target.value;
+                }} className=' small'
+              />
+            </div>
+
           </form>
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
           <h1>or</h1>

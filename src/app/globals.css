@@ -136,6 +136,11 @@ body {
 .downer{
   background-color: #fffbf0;
 }
+.downer2{
+  background-color: antiquewhite;
+  border: 1px solid rgb(196, 167, 129);
+  border-radius: 10px;
+}
 .logoutbtn {
   background-color: transparent !important;
   border: none !important;
@@ -216,6 +221,29 @@ hr {
   padding: 0.1rem 1rem;
   border-radius: 20px;
   text-wrap: nowrap;
+}
+.small{
+  width: 3rem !important;
+  padding: 0% !important;
+  height: 2rem;
+}
+.mooder{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 0;
+  width: auto;
+  height: 8rem;
+  padding: 0.5rem 1rem;
+  overflow: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.closer{
+  cursor: pointer;
+}
+.closer h1{
+  padding: 0.3rem 0.8rem;
 }
 
 @media screen and (max-width:1200px) {
