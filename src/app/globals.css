@@ -48,6 +48,12 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+.formal form{
+  background-color: #ebe8dc;
+  padding: 3rem;
+  border-radius: 10px;
+  border: 1px solid;
+}
 
 .formal input {
   border: 2px solid black;
@@ -106,7 +112,13 @@ body {
 }
 
 .texter {
-  font-size: 1.2rem !important;
+  font-size: 1.2rem  !important;
+}
+.texter2 {
+  position: relative;
+  top: -15px;
+  right: -12px;
+  font-size: 10px !important;
 }
 
 .searcher {

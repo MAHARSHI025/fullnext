@@ -18,8 +18,8 @@ function Thoughts() {
     const getall = async () => {
 
       const thoughts = await axios.post("/api/users/thoughts")
-
       setApiData(thoughts.data.shuffledArray)
+
       if (thoughts.data.error === "Unauthorize user") {
         toast("Please Login First", {
           style: {
@@ -44,11 +44,11 @@ function Thoughts() {
   return (
     <div>
       <Toaster />
+
       <div className="btnclass flex justify-center gap-4" >
-        <button className=' linebtn'  onClick={() => setShowDiv(!showDiv)}>Search user</button>
+        <button className=' linebtn' onClick={() => setShowDiv(!showDiv)}>Search user</button>
         <Link href={"/profile"}><button className=' linebtn'>Profile</button></Link>
         <Link href={"/profile"}><button className=' linebtn'>Update</button></Link>
-        
       </div>
 
       {showDiv && (
@@ -59,21 +59,24 @@ function Thoughts() {
           </div>
         </div>
       )}
+
       <div className="card flex gap-4 justify-center p-4 flex-wrap">
         {apiData?.map(item => (
-          <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{backgroundImage: `linear-gradient(13deg, ${item.typer} , #e4daaf, transparent)`}} id='carder' key={item._id}>
+          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' key={item._id}>
+
             <div className='upper'>
+              <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
               <h1>{item.username}</h1>
               <h2>{item.email}</h2>
             </div>
             <div>
               <h2>Thought</h2>
               <h1 className='texter'>{item.thought}</h1>
-              <h1 className='texter'>{item?.typer}</h1>
             </div>
           </div>
         ))}
       </div>
+
     </div>
   )
 }

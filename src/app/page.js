@@ -44,7 +44,7 @@ export default function Home() {
         <h1 className=" text-center text-5xl font-bold">How It Works</h1>
         <div className="section flex gap-2 justify-center flex-col">
           <div className="column">
-            <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
+            <div data-aos="fade-in"   className=" flex flex-row justify-center items-center">
               <div className="first w-48 flex justify-end items-center"><h1 className='number text-center flex justify-center items-center '>1</h1></div>
               <hr />
               <div className="line"></div>
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
+          <div data-aos="fade-in"   className=" flex flex-row justify-center items-center">
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">Put your Thought</h1>
               <h1 className=' text-center font-medium text-xs'>Add your thought around the world and put your mood color</h1>
@@ -65,7 +65,7 @@ export default function Home() {
             <hr />
             <div className="first w-48 flex justify-start items-center"><h1 className='number text-center flex justify-center items-center'>2</h1></div>
           </div>
-          <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
+          <div data-aos="fade-in"   className=" flex flex-row justify-center items-center">
             <div className="first w-48 flex justify-end items-center"><h1 className='number text-center flex justify-center items-center'>3</h1></div>
             <hr />
             <div className="line"></div>
@@ -75,7 +75,7 @@ export default function Home() {
               <h1 className=' text-center font-medium text-xs'>Explore how world thinking and get updated with time</h1>
             </div>
           </div>
-          <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
+          <div data-aos="fade-in"   className=" flex flex-row justify-center items-center">
             <div className="text w-48 flex  flex-col justify-center items-center gap-2">
               <h1 className=" text-xl font-bold">Update thought</h1>
               <h1 className=' text-center font-medium text-xs'>You can update your thought anytime you want.</h1>
@@ -85,7 +85,7 @@ export default function Home() {
             <hr />
             <div className="first w-48 flex justify-start items-center"><h1 className='number text-center flex justify-center items-center'>4</h1></div>
           </div>
-          <div data-aos="fade-in" data-aos-once="true" className=" flex flex-row justify-center items-center">
+          <div data-aos="fade-in"   className=" flex flex-row justify-center items-center">
             <div className="first w-48 flex justify-end items-center"><h1 className='number text-center flex justify-center items-center'>5</h1></div>
             <hr />
             <div className="line"></div>

@@ -24,9 +24,13 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    typer: {
+    color: {
         type: String,
         default: "transparent",
+    },
+    typer: {
+        type: String,
+        default: "think",
     },
     verifytoken: String,
     verifytokenexpiry: Date,

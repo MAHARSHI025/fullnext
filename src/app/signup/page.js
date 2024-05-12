@@ -4,19 +4,74 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Droper from '../components/Droper';
 
 function Signup() {
 
   const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setvalue] = useState("Think");
 
   const [user, setuser] = useState({
     email: "",
     username: "",
     password: "",
     thought: "",
-    typer: "transparent"
+    color: "transparent",
+    typer: "think",
   })
+
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown1 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Love")
+    setuser({ ...user, typer: "Love" });
+  };
+
+  const toggleDropdown2 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Think")
+    setuser({ ...user, typer: "Think" });
+  };
+  const toggleDropdown3 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Sad")
+    setuser({ ...user, typer: "Sad" });
+
+  };
+  const toggleDropdown4 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Angry")
+    setuser({ ...user, typer: "Angry" });
+
+  };
+  const toggleDropdown5 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Lonely")
+    setuser({ ...user, typer: "Lonely" });
+
+  };
+  const toggleDropdown6 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Inspired")
+    setuser({ ...user, typer: "Inspired" });
+
+  };
+  const toggleDropdown7 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Bored")
+    setuser({ ...user, typer: "Bored" });
+
+  };
+  const toggleDropdown8 = () => {
+    setIsOpen(!isOpen);
+    setvalue("Relax")
+    setuser({ ...user, typer: "Relax" });
+
+  };
 
   const onsignup = async () => {
 
@@ -44,10 +99,13 @@ function Signup() {
   }
 
 
+
+
+
   return (
     <>
       <Toaster />
-      <div>
+      <div className=' mb-6'>
         <div className="formal" >
           <form className=" flex justify-center items-center flex-col gap-2" >
             <h1 className=' font-bold text-4xl my-4'>Signup</h1>
@@ -75,10 +133,38 @@ function Signup() {
               onChange={(e) => setuser({ ...user, thought: e.target.value })}
               placeholder='Enter your thought'
             ></textarea>
-            <div>
-            <Droper></Droper>
 
+            <div className=" flex items-center justify-center  ">
+              <h1 className=' font-bold text-lg'>Type-</h1>
+              <div className="relative ">
+                <h1
+                  className=" cursor-pointer inline justify-center downer2 font-medium text-sm  px-4 py-1   focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-gray-100"
+                  id="options-menu"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                  onClick={toggleDropdown}
+                  >
+                  {value}
+                </h1>
+
+                {isOpen && (
+                  <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 mooder" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <div className="closer" role="none">
+                      <h1 onClick={toggleDropdown1} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Love</h1>
+                      <h1 onClick={toggleDropdown2} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Think</h1>
+                      <h1 onClick={toggleDropdown3} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Sad</h1>
+                      <h1 onClick={toggleDropdown4} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Angry</h1>
+                      <h1 onClick={toggleDropdown5} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Lonely</h1>
+                      <h1 onClick={toggleDropdown6} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Inspired</h1>
+                      <h1 onClick={toggleDropdown7} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Bored</h1>
+                      <h1 onClick={toggleDropdown8} className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Relax</h1>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
+
+
 
             <div className=' flex flex-row justify-center items-center gap-2 flex-wrap'>
               <h1>Get color as your mood</h1>
@@ -86,11 +172,11 @@ function Signup() {
                 type="color"
                 name=""
                 id="typer"
-                value={"#99876e"}
+                className=' small'
+                value={user.color}
                 onChange={(e) => {
-                  setuser({ ...user, typer: e.target.value });
-                  document.getElementById('typer').value = e.target.value;
-                }} className=' small'
+                  setuser({ ...user, color: e.target.value });
+                }}
               />
             </div>
 
@@ -98,8 +184,8 @@ function Signup() {
           <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
           <h1>or</h1>
           <button type="submit" className=' logoutbtn'><Link href={"/login"}>login</Link></button>
-        </div>
-      </div>
+        </div >
+      </div >
     </>
   )
 }

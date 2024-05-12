@@ -10,7 +10,7 @@ export async function POST(NextRequest){
 
     try {
         const reqbody = await NextRequest.json()
-        const {username, email, password, thought, typer} = reqbody
+        const {username, email, password, thought, color, typer} = reqbody
         console.log(reqbody);
 
         if (username === "" || email === "" || password === "" || thought === "") {
@@ -36,7 +36,8 @@ export async function POST(NextRequest){
             username,
             password: hashedpassword,
             thought,
-            typer
+            typer,
+            color,
         })
         const saveduser = await newuser.save()
         console.log(saveduser);
