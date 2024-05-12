@@ -53,7 +53,7 @@ function Login() {
       <Toaster />
       <div className="formal" >
         <form className=" flex justify-center items-center flex-col gap-2" >
-          <h1 className=' font-bold text-4xl my-4'>Login</h1>
+          <h1 className=' font-bold text-4xl my-4 space'>Login</h1>
           <input type="email"
             value={user.email}
             onChange={(e) => setuser({ ...user, email: e.target.value })}

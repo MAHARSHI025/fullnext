@@ -16,29 +16,25 @@
   }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+
 body {
   color: black;
   background-color: #fffbf0;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.space {
+  font-family: "Space Grotesk", sans-serif !important;
 }
 
 .navbar {
   background-color: #fffbf0;
-
 }
 
 .formal {
@@ -48,7 +44,8 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
-.formal form{
+
+.formal form {
   background-color: #ebe8dc;
   padding: 3rem;
   border-radius: 10px;
@@ -112,8 +109,10 @@ body {
 }
 
 .texter {
-  font-size: 1.2rem  !important;
+  font-size: 1.2rem !important;
+  font-weight: 800;
 }
+
 .texter2 {
   position: relative;
   top: -15px;
@@ -145,14 +144,17 @@ body {
   position: absolute;
   left: 60%;
 }
-.downer{
+
+.downer {
   background-color: #fffbf0;
 }
-.downer2{
+
+.downer2 {
   background-color: antiquewhite;
   border: 1px solid rgb(196, 167, 129);
   border-radius: 10px;
 }
+
 .logoutbtn {
   background-color: transparent !important;
   border: none !important;
@@ -161,10 +163,14 @@ body {
 
 .info {
   background-color: black;
-
+  gap: 3rem;
   color: white;
   margin: 0%;
   padding: 1.2rem;
+}
+
+.blicker {
+  top: 2rem;
 }
 
 .bgier {
@@ -211,22 +217,26 @@ hr {
   padding-top: 7rem !important;
   background-image: linear-gradient(180deg, black, #70653c);
 }
-.midder{
+
+.midder {
   background-color: white;
   position: absolute;
   z-index: 100;
 }
-#midderplus{
+
+#midderplus {
   display: flex;
   justify-content: center;
 }
-.btnclass{
+
+.btnclass {
   background-color: #423e2d;
   margin: 0;
   padding: 0.2rem;
   /* overflow-x: scroll; */
 }
-.linebtn{
+
+.linebtn {
   background-color: #e4daaf;
   font-weight: 700;
   border: 2px solid white;
@@ -234,12 +244,14 @@ hr {
   border-radius: 20px;
   text-wrap: nowrap;
 }
-.small{
+
+.small {
   width: 3rem !important;
   padding: 0% !important;
   height: 2rem;
 }
-.mooder{
+
+.mooder {
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -251,10 +263,12 @@ hr {
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
-.closer{
+
+.closer {
   cursor: pointer;
 }
-.closer h1{
+
+.closer h1 {
   padding: 0.3rem 0.8rem;
 }
 

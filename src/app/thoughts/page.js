@@ -43,6 +43,7 @@ function Thoughts() {
 
   return (
     <div>
+      
       <Toaster />
 
       <div className="btnclass flex justify-center gap-4" >
@@ -71,7 +72,7 @@ function Thoughts() {
             </div>
             <div>
               <h2>Thought</h2>
-              <h1 className='texter'>{item.thought}</h1>
+              <h1 className='texter space'>{item.thought}</h1>
             </div>
           </div>
         ))}

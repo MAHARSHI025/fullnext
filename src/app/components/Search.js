@@ -43,7 +43,7 @@ function Search() {
             <Toaster></Toaster>
             <div className=' flex flex-col justify-center items-center '>
                 <div className=' formal flex-row'>
-                    <h1 className=' font-bold text-4xl my-4'>Search User</h1>
+                    <h1 className=' font-bold text-4xl my-4 space'>Search User</h1>
                     <input type="text"
                         value={user.username}
                         onChange={(e) => setuser({ ...user, username: e.target.value })}
@@ -61,7 +61,7 @@ function Search() {
                         </div>
                         <div>
                             <h2>Thought</h2>
-                            <h1 className='texter'>{userdata?.thought}</h1>
+                            <h1 className='texter space'>{userdata?.thought}</h1>
                         </div>
                     </div>
                 </div>

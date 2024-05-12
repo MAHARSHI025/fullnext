@@ -108,7 +108,7 @@ function Signup() {
       <div className=' mb-6'>
         <div className="formal" >
           <form className=" flex justify-center items-center flex-col gap-2" >
-            <h1 className=' font-bold text-4xl my-4'>Signup</h1>
+            <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
             <input type="text"
               value={user.username}
               onChange={(e) => setuser({ ...user, username: e.target.value })}
