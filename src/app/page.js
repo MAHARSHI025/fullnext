@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import Bideo from "./components/bideo";
+import Bideo from "./components/Bideo";
 export default function Home() {
 
 
