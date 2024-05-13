@@ -31,7 +31,7 @@ function Thoughts() {
         },)
         setTimeout(() => {
           router.push("/login")
-        }, 4000);
+        }, 1500);
       }
     }
     getall()
@@ -43,7 +43,7 @@ function Thoughts() {
 
   return (
     <div>
-      
+
       <Toaster />
 
       <div className="btnclass flex justify-center gap-4" >
@@ -55,7 +55,11 @@ function Thoughts() {
       {showDiv && (
         <div className="midderplus" id="midderplus">
           <div className="midder flex flex-col items-end p-2 border-2 border-black rounded-lg">
-            <button onClick={() => setShowDiv(!showDiv)}>#</button>
+            <button onClick={() => setShowDiv(!showDiv)}>
+              <span class="material-symbols-outlined">
+                close
+              </span>
+            </button>
             <Search ></Search>
           </div>
         </div>

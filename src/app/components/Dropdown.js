@@ -1,11 +1,16 @@
 "use client"
 import React from 'react'
 import { useState } from 'react';
-import Link from 'next/link';
 import axios from 'axios';
+import Link from 'next/link';
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
+
 
 
 function Dropdown() {
+
+  const router = useRouter()
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,14 +19,23 @@ function Dropdown() {
   };
   const onlogout = async () => {
     const response = await axios.get("/api/users/logout")
-    console.log(response);
+    // console.log(response);
+    if (response.data.message === "Logout successfully") {
+      toast.success(response.data.message)
+    } else {
+      toast(response.data.message)
+      setTimeout(() => {
+        router.push("/login")
+      }, 2000);
+
+    }
     setIsOpen(!isOpen);
   }
 
   return (
     <>
 
-
+      <Toaster></Toaster>
       <div>
         <div className=" flex items-center justify-center bg-gray-100">
           <div className="relative flex ">

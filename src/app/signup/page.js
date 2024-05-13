@@ -106,7 +106,7 @@ function Signup() {
     <>
       <Toaster />
       <div className=' mb-6'>
-        <div className="formal" >
+        <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
             <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
             <input type="text"

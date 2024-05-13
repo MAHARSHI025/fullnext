@@ -35,14 +35,19 @@ body {
 
 .navbar {
   background-color: #fffbf0;
+  z-index: 10;
+  position: relative;
+}
+.card{
+  background-color: black;
 }
 
 .formal {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  /* max-width: 2rem; */
 }
 
 .formal form {
@@ -76,18 +81,24 @@ body {
 }
 
 .main {
-  /* color: white; */
-  background-color: #fffbf0;
+  color: white;
+  /* background-color: #fffbf0; */
+  background-image: linear-gradient(180deg, rgb(3 4 7), black);
+  box-shadow: 0px 9px 20px 0px black;
+  z-index: 100;
+  position: relative;
 }
 
 .btn button {
-  border: 2px solid black;
+  border: 2px solid white;
+  font-weight: 200;
 }
 
 .mainbtn {
-  background-color: black;
-  color: #ebe8dc;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
   margin-right: 0.5rem;
+  font-weight: 900 !important;
 }
 
 .temp {
@@ -118,6 +129,7 @@ body {
   top: -15px;
   right: -12px;
   font-size: 10px !important;
+  color: wheat;
 }
 
 .searcher {
@@ -174,9 +186,46 @@ body {
 }
 
 .bgier {
-  background-image: linear-gradient(180deg, #423e2d, black);
+  /* background-image: linear-gradient(180deg, #363326, black); */
+  background-image: linear-gradient(180deg, #492d0a, black);
 }
 
+.video-container {
+  position: relative;
+  /* width: 100%;
+  height: 100%; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.content {
+  position: relative;
+  top: 10rem;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  height: 30rem;
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif !important;
+
+}
+
+.logo {
+  filter: invert(1);
+}
 
 .lootie {
   height: 20rem;
@@ -270,6 +319,13 @@ hr {
 
 .closer h1 {
   padding: 0.3rem 0.8rem;
+}
+
+@media screen and (max-width:500px) {
+  .content {
+    top: 5rem;
+    font-size: 4rem;
+  }
 }
 
 @media screen and (max-width:1200px) {
