@@ -22,7 +22,8 @@ function Dropdown() {
     // console.log(response);
     if (response.data.message === "Logout successfully") {
       toast.success(response.data.message)
-    } else {
+    } 
+    else {
       toast(response.data.message)
       setTimeout(() => {
         router.push("/login")
@@ -55,11 +56,11 @@ function Dropdown() {
             {isOpen && (
               <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 blicker" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <div className="closer" role="none">
-                  <Link onClick={toggleDropdown} href="/profile" className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Profile</Link>
+                  <Link onClick={toggleDropdown} href="/profile" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"> <span class="mx-1 material-symbols-outlined">person</span>Profile</Link>
                   <hr className=' w-full' />
-                  <Link onClick={toggleDropdown} href="/signup" className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Signup</Link>
-                  <Link onClick={toggleDropdown} href="/login" className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Login</Link>
-                  <Link onClick={onlogout} href="/" className="block px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem">Logout</Link>
+                  <Link onClick={toggleDropdown} href="/signup" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">person_add</span>Signup</Link>
+                  <Link onClick={toggleDropdown} href="/login" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">login</span> Login</Link>
+                  <Link onClick={onlogout} href="/" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">logout</span>Logout</Link>
                 </div>
               </div>
             )}

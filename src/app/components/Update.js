@@ -30,7 +30,7 @@ function Update() {
 
   return (
     <>
-      <Toaster></Toaster>
+      {/* <Toaster></Toaster> */}
       <div className="formal flex justify-center items-center flex-col" >
         <form className=" flex justify-center items-center flex-col gap-2" >
           <h1 className=' font-bold text-4xl my-4'>Want to update?</h1>

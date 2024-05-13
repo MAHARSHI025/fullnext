@@ -104,7 +104,7 @@ function Signup() {
 
   return (
     <>
-      <Toaster />
+      {/* <Toaster /> */}
       <div className=' mb-6'>
         <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
@@ -138,13 +138,16 @@ function Signup() {
               <h1 className=' font-bold text-lg'>Type-</h1>
               <div className="relative ">
                 <h1
-                  className=" cursor-pointer inline justify-center downer2 font-medium text-sm  px-4 py-1   focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-gray-100"
+                  className=" cursor-pointer flex items-center justify-center downer2 font-medium text-sm  px-3 py-1   focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-gray-100"
                   id="options-menu"
                   aria-haspopup="true"
                   aria-expanded="true"
                   onClick={toggleDropdown}
-                  >
+                >
                   {value}
+                  <span class="material-symbols-outlined m-0">
+                    expand_more
+                  </span>
                 </h1>
 
                 {isOpen && (

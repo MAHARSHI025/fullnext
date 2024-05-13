@@ -46,7 +46,7 @@ function Userdetail() {
 
     return (
         <>
-            <Toaster></Toaster>
+            {/* <Toaster></Toaster> */}
             <div className=' flex flex-col justify-center items-center '>
                 <div className=' formal flex-row'>
                     <h1 className=' font-bold text-4xl my-4 space  text-nowrap'>My profile</h1>

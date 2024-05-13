@@ -44,7 +44,7 @@ function Thoughts() {
   return (
     <div>
 
-      <Toaster />
+      {/* <Toaster /> */}
 
       <div className="btnclass flex justify-center gap-4" >
         <button className=' linebtn' onClick={() => setShowDiv(!showDiv)}>Search user</button>

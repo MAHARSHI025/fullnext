@@ -24,7 +24,7 @@ export const sendEmail = async ({ email, emailType, userId }) => {
         //     }
         //   });
 
-        //original irij miem cunb lwyw
+        //original gmail
         var transport = nodemailer.createTransport({
             host: "smtp.gmail.com",
             service: "gmail",

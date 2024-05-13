@@ -40,7 +40,7 @@ function Search() {
 
     return (
         <>
-            <Toaster></Toaster>
+            {/* <Toaster></Toaster> */}
             <div className=' flex flex-col justify-center items-center '>
                     <h1 className=' font-bold text-4xl my-4 space'>Search User</h1>
                 <div className=' formal flex-row flex '>
