@@ -12,12 +12,14 @@ function Thoughts() {
   const router = useRouter()
 
   const [apiData, setApiData] = useState([]);
+  const [user, setuser] = useState({ username: "" })
   const [showDiv, setShowDiv] = useState(false);
 
   useEffect(() => {
     const getall = async () => {
 
       const thoughts = await axios.post("/api/users/thoughts")
+      console.log(thoughts);
       setApiData(thoughts.data.shuffledArray)
 
       if (thoughts.data.error === "Unauthorize user") {
@@ -37,7 +39,18 @@ function Thoughts() {
     getall()
   }, [])
 
+  let setter = (username) => {
+    setuser({ username: username });
+  };
+  useEffect(() => {
 
+    let conter = async () => {
+      // console.log("hello");
+      const response = await axios.post("/api/users/likethought", user)
+      console.log(response);
+    }
+    conter()
+  }, [user]);
 
 
 
@@ -69,9 +82,15 @@ function Thoughts() {
         {apiData?.map(item => (
           <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' key={item._id}>
 
-            <div className='upper'>
+            <div className='upper '>
               <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
-              <h1>{item.username}</h1>
+              {/* <h1 className='texter2 top-2 text-right mt-1'>{item.} Likes</h1> */}
+
+              <h1 className='texter2 top-2 text-right mt-1 cursor-pointer' onClick={() => setter(item.username)}><span class="material-symbols-outlined">
+                favorite
+              </span></h1>
+
+              <h1 >{item.username}</h1>
               <h2>{item.email}</h2>
             </div>
             <div>

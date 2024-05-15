@@ -32,6 +32,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "think",
     },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Liker',
+    }],
+
     verifytoken: String,
     verifytokenexpiry: Date,
 }, {
@@ -39,6 +44,6 @@ const userSchema = new mongoose.Schema({
 }
 )
 
-const User = mongoose.models.users || mongoose.model("users", userSchema)
+const User = mongoose.models.User || mongoose.model("User", userSchema)
 
 export default User
