@@ -19,7 +19,7 @@ function Thoughts() {
     const getall = async () => {
 
       const thoughts = await axios.post("/api/users/thoughts")
-      // console.log(thoughts);
+      console.log(thoughts);
       setApiData(thoughts.data.user)
 
       if (thoughts.data.error === "Unauthorize user") {
@@ -62,6 +62,7 @@ function Thoughts() {
     <div>
 
       {/* <Toaster /> */}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
       <div className="btnclass flex justify-center gap-4" >
         <button className=' linebtn' onClick={() => setShowDiv(!showDiv)}>Search user</button>
@@ -84,7 +85,7 @@ function Thoughts() {
 
       <div className="card flex gap-4 justify-center p-4 flex-wrap">
         {apiData?.map(item => (
-          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' >
+          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' key={item._id}>
 
             <div className='upper '>
               <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
