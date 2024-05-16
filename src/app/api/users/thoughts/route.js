@@ -26,25 +26,13 @@ export async function POST(req) {
         // const consumer = await User.findById(decodedtoken?.id)
         // console.log(consumer);
 
-        // const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("likecount");
-        const user = await User.find().select("-password -isverified -verifytoken -verifytokenexpiry").populate("likes");
-        // const user = await User.find()
-        //     .select("-password -isverified -verifytoken -verifytokenexpiry")
-        //     .populate({
-        //         path: 'likes',
-        //         populate: {
-        //             path: 'user',
-        //             model: 'User',
-        //             select: 'username email', // Adjust fields to select
-        //         }
-        //     });
-            // console.log(user);
+        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("likes")
 
-        // const shuffledArray = user;
-        // for (let i = shuffledArray.length - 1; i > 0; i--) {
-        //     const j = Math.floor(Math.random() * (i + 1));
-        //     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-        // }
+        const shuffledArray = user;
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
         // console.log(shuffledArray);
 
         return NextResponse.json({

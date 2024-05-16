@@ -32,10 +32,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "think",
     },
-    likes: [{
+    likecount: {
+        type: Number,
+        default: 0,
+    },
+    likes: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Liker',
-    }],
+        ref: 'Liken',
+    },
 
     verifytoken: String,
     verifytokenexpiry: Date,

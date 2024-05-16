@@ -12,15 +12,15 @@ function Thoughts() {
   const router = useRouter()
 
   const [apiData, setApiData] = useState([]);
-  const [user, setuser] = useState({ username: "" })
+  const [user, setuser] = useState({ userName: "" })
   const [showDiv, setShowDiv] = useState(false);
 
   useEffect(() => {
     const getall = async () => {
 
       const thoughts = await axios.post("/api/users/thoughts")
-      console.log(thoughts);
-      setApiData(thoughts.data.shuffledArray)
+      // console.log(thoughts);
+      setApiData(thoughts.data.user)
 
       if (thoughts.data.error === "Unauthorize user") {
         toast("Please Login First", {
@@ -40,14 +40,18 @@ function Thoughts() {
   }, [])
 
   let setter = (username) => {
-    setuser({ username: username });
+    setuser({ userName: username });
   };
+
   useEffect(() => {
 
     let conter = async () => {
-      // console.log("hello");
-      const response = await axios.post("/api/users/likethought", user)
-      console.log(response);
+
+      // console.log(user);
+      const response = await axios.post("/api/users/addlike", user)
+      // console.log(response);
+
+      toast(response?.data.message, { duration: 800 })
     }
     conter()
   }, [user]);
@@ -80,22 +84,21 @@ function Thoughts() {
 
       <div className="card flex gap-4 justify-center p-4 flex-wrap">
         {apiData?.map(item => (
-          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' key={item._id}>
+          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' >
 
             <div className='upper '>
               <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
-              {/* <h1 className='texter2 top-2 text-right mt-1'>{item.} Likes</h1> */}
 
               <h1 className='texter2 top-2 text-right mt-1 cursor-pointer' onClick={() => setter(item.username)}><span class="material-symbols-outlined">
                 favorite
               </span></h1>
 
-              <h1 >{item.username}</h1>
-              <h2>{item.email}</h2>
+              <h1 >{item?.username}</h1>
+              <h2>{item?.email}</h2>
             </div>
             <div>
               <h2>Thought</h2>
-              <h1 className='texter space'>{item.thought}</h1>
+              <h1 className='texter space'>{item?.thought}</h1>
             </div>
           </div>
         ))}
