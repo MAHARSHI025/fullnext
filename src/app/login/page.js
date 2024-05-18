@@ -25,8 +25,8 @@ function Login() {
 
         toast.success("login successfully", { id: toastId }, {
           style: {
-            fontSize:"1rem",
-            fontWeight:"800",
+            fontSize: "1rem",
+            fontWeight: "800",
             border: '2px solid green',
           }
         },)
@@ -46,7 +46,7 @@ function Login() {
   }
 
 
- 
+
 
   return (
     <>
@@ -54,22 +54,33 @@ function Login() {
       <div className="formal flex-col" >
         <form className=" flex justify-center items-center flex-col gap-2" >
           <h1 className=' font-bold text-4xl my-4 space'>Login</h1>
-          <input type="email"
-            value={user.email}
-            onChange={(e) => setuser({ ...user, email: e.target.value })}
-            placeholder='Email'
-            required
-          />
-          <input type="password"
-            value={user.password}
-            onChange={(e) => setuser({ ...user, password: e.target.value })}
-            placeholder='Password'
-            required
-          />
+          <div className=' flex justify-center items-center gap-1'>
+            <span class="material-symbols-outlined m-0">
+              person
+            </span>
+            <input type="email"
+              value={user.email}
+              onChange={(e) => setuser({ ...user, email: e.target.value })}
+              placeholder='Email'
+              required
+            />
+          </div>
+
+          <div className=' flex justify-center items-center gap-1'>
+            <span class="material-symbols-outlined m-0">
+              key
+            </span>
+            <input type="password"
+              value={user.password}
+              onChange={(e) => setuser({ ...user, password: e.target.value })}
+              placeholder='Password'
+              required
+            />
+          </div>
         </form>
-        <button type="submit" onClick={onlogin} id='signup' className=' my-2'>Login</button>
+        <button type="submit" onClick={onlogin} id='signup' className=' text-xl my-2'>Login</button>
         <h1>or</h1>
-        <button type="submit"  className=' logoutbtn'><Link href={"/signup"}>Signup</Link></button>
+        <button type="submit" className=' logoutbtn'><Link href={"/signup"}>Signup</Link></button>
       </div>
     </>
   )

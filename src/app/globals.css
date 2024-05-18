@@ -57,7 +57,7 @@ body {
   border: 1px solid;
 }
 
-.formal input {
+.formal input{
   border: 2px solid black;
   padding: 0.2rem;
   border-radius: 5px;
@@ -83,9 +83,9 @@ body {
 .main {
   color: white;
   /* background-color: #fffbf0; */
-  background-image: linear-gradient(180deg, rgb(3 4 7), black);
-  box-shadow: 0px 9px 20px 0px black;
-  z-index: 100;
+  /* background-image: linear-gradient(180deg, rgb(3 4 7), black); */
+  /* box-shadow: 0px 9px 20px 0px black; */
+  /* z-index: 100; */
   position: relative;
 }
 
@@ -131,6 +131,13 @@ body {
   font-size: 10px !important;
   color: wheat;
 }
+.texter3{
+  position: relative;
+  right: -12px;
+  font-size: 15px !important;
+  color: wheat;
+  top: -30px;
+}
 
 .searcher {
   color: black;
@@ -149,7 +156,20 @@ body {
   padding: 0rem 0.8rem;
   border-radius: 5px;
 }
-
+.likebtn{
+  color: #ce0000 !important;
+}
+.trailsText {
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+.mouse{
+  background-image: linear-gradient(180deg, black, #492d0a);
+  color: white;
+  padding: 0rem 6rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .drop {
   display: none;
   flex-direction: column;
@@ -183,6 +203,7 @@ body {
 
 .blicker {
   top: 2rem;
+  z-index: 1001 !important;
 }
 
 .bgier {
@@ -325,6 +346,15 @@ hr {
   .content {
     top: 5rem;
     font-size: 4rem;
+  }
+  .mouse{
+    padding: 0rem 1rem;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-start;
+  }
+  .mouse div h1{
+    margin-left: 0;
+
   }
 }
 

@@ -37,7 +37,7 @@ export async function POST(req) {
             if (namer.length >= 1) {
                 return NextResponse.json({
                     namer,
-                    message: "User already like thought",
+                    message: "You already like this thought",
                     success: false
                 });
 
@@ -51,7 +51,7 @@ export async function POST(req) {
             return NextResponse.json({
                 // likearray,
                 likecount,
-                message: "User like thought",
+                message: "You like thought",
                 success: true
             });
         }

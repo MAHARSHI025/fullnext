@@ -11,7 +11,7 @@ export async function POST(NextRequest) {
     try {
 
         const reqbody = await NextRequest.json()
-        const { upthought } = reqbody
+        const { upthought, color, typer } = reqbody
         // console.log(reqbody);
 
         if (upthought === "") {
@@ -36,14 +36,14 @@ export async function POST(NextRequest) {
         let userdetail = jwt.verify(tokenvalue, process.env.TOKENSECRET,)
         // console.log(userdetail.id);
 
-        let user = await User.findByIdAndUpdate(userdetail.id, { $set: { thought: upthought } })
+        let user = await User.findByIdAndUpdate(userdetail.id, { $set: { thought: upthought, color: color, typer: typer } })
         await user.save()
 
         // console.log(updateduser);
 
         return NextResponse.json({
-            message:"user saved sucessfully",
-            Status:200,
+            message: "user saved sucessfully",
+            Status: 200,
         })
 
 

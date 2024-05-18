@@ -109,30 +109,53 @@ function Signup() {
         <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
             <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
-            <input type="text"
-              value={user.username}
-              onChange={(e) => setuser({ ...user, username: e.target.value })}
-              placeholder='Username'
-              required
-            />
-            <input type="email"
-              value={user.email}
-              onChange={(e) => setuser({ ...user, email: e.target.value })}
-              placeholder='Email'
-              required
-            />
-            <input type="password"
-              value={user.password}
-              onChange={(e) => setuser({ ...user, password: e.target.value })}
-              placeholder='Password'
-              required
-            />
-            <textarea
-              rows="5"
-              value={user.thought}
-              onChange={(e) => setuser({ ...user, thought: e.target.value })}
-              placeholder='Enter your thought'
-            ></textarea>
+            <div className=' flex justify-center items-center gap-1'>
+              <span class="material-symbols-outlined m-0">
+                person
+              </span>
+              <input type="text"
+                value={user.username}
+                onChange={(e) => setuser({ ...user, username: e.target.value })}
+                placeholder='Username'
+                required
+              />
+            </div>
+
+            <div className=' flex justify-center items-center gap-1'>
+              <span class="material-symbols-outlined m-0">
+                mail
+              </span>
+              <input type="email"
+                value={user.email}
+                onChange={(e) => setuser({ ...user, email: e.target.value })}
+                placeholder='Email'
+                required
+              />
+            </div>
+
+            <div className=' flex justify-center items-center gap-1'>
+              <span class="material-symbols-outlined m-0">
+                key
+              </span>
+              <input type="password"
+                value={user.password}
+                onChange={(e) => setuser({ ...user, password: e.target.value })}
+                placeholder='Password'
+                required
+              />
+            </div>
+
+            <div className=' flex justify-center items-start  gap-1'>
+              <span class="material-symbols-outlined m-0 mt-1">
+                psychology
+              </span>
+              <textarea
+                rows="5"
+                value={user.thought}
+                onChange={(e) => setuser({ ...user, thought: e.target.value })}
+                placeholder='Enter your thought'
+              ></textarea>
+            </div>
 
             <div className=" flex items-center justify-center  ">
               <h1 className=' font-bold text-lg'>Type-</h1>

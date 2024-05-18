@@ -32,6 +32,9 @@ function Userdetail() {
                     username: main.username,
                     email: main.email,
                     thought: main.thought,
+                    color: main.color,
+                    typer: main.typer,
+                    likecount: main.likecount
                 })
 
             } catch (error) {
@@ -52,10 +55,18 @@ function Userdetail() {
                     <h1 className=' font-bold text-4xl my-4 space  text-nowrap'>My profile</h1>
                 </div>
 
-                <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80" style={{ backgroundImage: `linear-gradient(10deg, ${userdata.color} , #e4daaf, #e4daaf, transparent)` }}>
-                    <div className="temp flex flex-col p-4 rounded-lg gap-4" id='carder' >
+                <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80">
+                    <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${userdata?.color} , #e4daaf, #e4daaf, black)` }} id='carder' >
+                        <h1 className='texter2 top-2 text-right text-orange-700'>{userdata?.typer}</h1>
+                        <h1 className='texter3 top- text-right text-orange-700'>{userdata?.likecount} likes</h1>
+
                         <div className='upper'>
-                            <h1>{userdata?.username}</h1>
+                            <h1 className=' flex items-center m-0'>
+                                <span class="material-symbols-outlined m-0">
+                                    person
+                                </span>
+                                {userdata?.username}
+                            </h1>
                             <h2>{userdata?.email}</h2>
                         </div>
                         <div>
