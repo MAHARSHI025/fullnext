@@ -10,6 +10,8 @@ function Signup() {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false);
   const [value, setvalue] = useState("Think");
+  const [icon, seticon] = useState(false);
+  const [password, setpassword] = useState(false);
 
   const [user, setuser] = useState({
     email: "",
@@ -98,6 +100,11 @@ function Signup() {
     }
   }
 
+  let visible = () => {
+    seticon(!icon)
+    setpassword(!password)
+  }
+
 
 
 
@@ -109,6 +116,7 @@ function Signup() {
         <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
             <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
+
             <div className=' flex justify-center items-center gap-1'>
               <span class="material-symbols-outlined m-0">
                 person
@@ -133,16 +141,21 @@ function Signup() {
               />
             </div>
 
-            <div className=' flex justify-center items-center gap-1'>
+            <div className=' flex justify-center items-center gap-1 ml-7'>
               <span class="material-symbols-outlined m-0">
                 key
               </span>
-              <input type="password"
+              <input type={password? "text":"password"}
                 value={user.password}
                 onChange={(e) => setuser({ ...user, password: e.target.value })}
                 placeholder='Password'
                 required
               />
+              <div className=' absolute align cursor-pointer flex items-center'>
+                <span class="material-symbols-outlined m-0 select-none" onClick={visible}>
+                  {icon ? "visibility" : "visibility_off"}
+                </span>
+              </div>
             </div>
 
             <div className=' flex justify-center items-start  gap-1'>
@@ -189,8 +202,6 @@ function Signup() {
                 )}
               </div>
             </div>
-
-
 
             <div className=' flex flex-row justify-center items-center gap-2 flex-wrap'>
               <h1>Get color as your mood</h1>

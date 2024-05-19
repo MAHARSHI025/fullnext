@@ -10,6 +10,8 @@ function Login() {
 
   const router = useRouter()
 
+  const [icon, seticon] = useState(false);
+  const [password, setpassword] = useState(false);
   const [user, setuser] = useState({
     email: "",
     password: "",
@@ -45,6 +47,10 @@ function Login() {
     }
   }
 
+  let visible = () => {
+    seticon(!icon)
+    setpassword(!password)
+  }
 
 
 
@@ -56,7 +62,7 @@ function Login() {
           <h1 className=' font-bold text-4xl my-4 space'>Login</h1>
           <div className=' flex justify-center items-center gap-1'>
             <span class="material-symbols-outlined m-0">
-              person
+              mail
             </span>
             <input type="email"
               value={user.email}
@@ -66,16 +72,21 @@ function Login() {
             />
           </div>
 
-          <div className=' flex justify-center items-center gap-1'>
+          <div className=' flex justify-center items-center gap-1 ml-7'>
             <span class="material-symbols-outlined m-0">
               key
             </span>
-            <input type="password"
+            <input type={password ? "text" : "password"}
               value={user.password}
               onChange={(e) => setuser({ ...user, password: e.target.value })}
               placeholder='Password'
               required
             />
+            <div className=' absolute align cursor-pointer flex items-center'>
+              <span class="material-symbols-outlined m-0 select-none" onClick={visible}>
+                {icon ? "visibility" : "visibility_off"}
+              </span>
+            </div>
           </div>
         </form>
         <button type="submit" onClick={onlogin} id='signup' className=' text-xl my-2'>Login</button>

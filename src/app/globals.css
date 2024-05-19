@@ -79,7 +79,10 @@ body {
   background-color: black;
   font-weight: 500;
 }
-
+.align{
+  position: relative;
+  right: 2rem;
+}
 .main {
   color: white;
   /* background-color: #fffbf0; */

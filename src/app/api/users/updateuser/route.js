@@ -11,10 +11,10 @@ export async function POST(NextRequest) {
     try {
 
         const reqbody = await NextRequest.json()
-        const { upthought, color, typer } = reqbody
+        const { thought, color, typer } = reqbody
         // console.log(reqbody);
 
-        if (upthought === "") {
+        if (thought === "") {
             return NextResponse.json({
                 error: "input is not given",
                 Status: 400,
@@ -36,7 +36,7 @@ export async function POST(NextRequest) {
         let userdetail = jwt.verify(tokenvalue, process.env.TOKENSECRET,)
         // console.log(userdetail.id);
 
-        let user = await User.findByIdAndUpdate(userdetail.id, { $set: { thought: upthought, color: color, typer: typer } })
+        let user = await User.findByIdAndUpdate(userdetail.id, { $set: { thought: thought, color: color, typer: typer } })
         await user.save()
 
         // console.log(updateduser);

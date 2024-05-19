@@ -5,7 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 function Update() {
 
   const [user, setuser] = useState({
-    upthought: "",
+    thought: "",
     color: "transparent",
     typer: "think",
   })
@@ -13,6 +13,7 @@ function Update() {
   const [value, setvalue] = useState("Think");
 
   const updater = async () => {
+
     try {
       const toastId = toast.loading('Please wait..');
       const response = await axios.post("/api/users/updateuser", user)
@@ -92,12 +93,12 @@ function Update() {
         <form className=" flex justify-center items-center flex-col gap-2" >
           <h1 className='space font-bold text-4xl my-4'>Want to update?</h1>
           <div className=' flex gap-2'>
-            <span class="material-symbols-outlined m-0 mt-1">
+            <span className="material-symbols-outlined m-0 mt-1">
               psychology
             </span>
             <textarea type="text"
               value={user.password}
-              onChange={(e) => setuser({ ...user, upthought: e.target.value })}
+              onChange={(e) => setuser({ ...user, thought: e.target.value })}
               placeholder='Enter your thought'
               required
             />
@@ -114,7 +115,7 @@ function Update() {
                 onClick={toggleDropdown}
               >
                 {value}
-                <span class="material-symbols-outlined m-0">
+                <span className="material-symbols-outlined m-0">
                   expand_more
                 </span>
               </h1>
