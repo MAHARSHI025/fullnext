@@ -19,7 +19,7 @@ function Thoughts() {
     const getall = async () => {
 
       const thoughts = await axios.post("/api/users/thoughts")
-      // console.log(thoughts);
+      console.log(thoughts);
       setApiData(thoughts.data.user)
 
       if (thoughts.data.error === "Unauthorize user") {
@@ -41,7 +41,7 @@ function Thoughts() {
 
   let setter = (username) => {
     setuser({ userName: username });
-    toast("User Liked", { duration: 1000 })
+    toast("Like", { duration: 600, icon:"❤️" })
   };
 
   useEffect(() => {
@@ -61,7 +61,6 @@ function Thoughts() {
   return (
     <div>
 
-      {/* <Toaster /> */}
 
       <div className="btnclass flex justify-center gap-4" >
         <button className=' linebtn' onClick={() => setShowDiv(!showDiv)}>Search user</button>
@@ -89,9 +88,12 @@ function Thoughts() {
             <div className='upper '>
               <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
 
-              <h1 className='texter2 top-2 text-right mt-1 cursor-pointer likebtn' onClick={() => setter(item.username)}><span class="material-symbols-outlined">
-                favorite
-              </span></h1>
+              <h1 className='texter2 top-2 text-right mt-2 cursor-pointer ' onClick={() => setter(item.username)}>
+                <span class="material-symbols-outlined likebtn" style={{ color: "#bbb38f" }}>
+                  favorite
+                </span>
+                <h1 className=' mini -mt-1 mr-0.5'>like</h1>
+              </h1>
 
               <h1 className=' flex items-center '> <span className=" material-symbols-outlined m-0">person</span> {item?.username}</h1>
               <h2>{item?.email}</h2>
@@ -101,6 +103,7 @@ function Thoughts() {
               <h1 className='texter space'>{item?.thought}</h1>
             </div>
           </div>
+
         ))}
       </div>
 

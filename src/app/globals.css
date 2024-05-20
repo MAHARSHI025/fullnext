@@ -106,7 +106,7 @@ body {
 
 .temp {
   /* background-color: #e4daaf82; */
-  border: 2px solid #77725e;
+  border: 2px solid #e4daaf;
 }
 
 .temp h1 {
@@ -141,7 +141,10 @@ body {
   color: wheat;
   top: -30px;
 }
-
+.mini{
+  font-size: 10px !important;
+  color: black;
+}
 .searcher {
   color: black;
   border: 2px solid;
@@ -160,7 +163,19 @@ body {
   border-radius: 5px;
 }
 .likebtn{
-  color: #ce0000 !important;
+  user-select: none;
+  transition: transform 0.5s ease, color 5.4s ease;
+  color: rgb(228 218 175) !important;
+}
+.likebtn:active{
+  animation-name: example;
+  animation-duration: 1s;
+  transform: scale(1.3);
+  color:  red;
+}
+@keyframes example {
+  from {color: red;}
+  to {color: red;}
 }
 .trailsText {
   overflow: hidden;
