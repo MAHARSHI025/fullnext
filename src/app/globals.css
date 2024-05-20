@@ -145,6 +145,18 @@ body {
   font-size: 10px !important;
   color: black;
 }
+.miniplus{
+  font-size: 13px !important;
+}
+.scrollbar{
+  font-size: 10px !important;
+}
+.scrollbar::-webkit-scrollbar{
+    display: none;  /* Safari and Chrome */
+}
+#small{
+  font-size: 13px;
+}
 .searcher {
   color: black;
   border: 2px solid;
