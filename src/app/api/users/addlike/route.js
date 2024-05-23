@@ -34,7 +34,7 @@ export async function POST(req) {
             let namer = await Liker.find({ userliked: userliked })
             // console.log(namer.length);
 
-            if (namer.length >= 1) {
+            if (namer?.length >= 1) {
                 return NextResponse.json({
                     namer,
                     message: "You already like this thought",

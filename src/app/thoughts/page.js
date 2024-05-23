@@ -14,7 +14,13 @@ function Thoughts() {
   const [apiData, setApiData] = useState([]);
   const [user, setuser] = useState({ userName: "" })
   const [showDiv, setShowDiv] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+  const [activePost, setActivePost] = useState(null);
+
+  const [comment, setcomment] = useState({
+    userName: "",
+    comment: ""
+  })
 
   useEffect(() => {
     const getall = async () => {
@@ -28,8 +34,6 @@ function Thoughts() {
           style: {
             fontSize: "1rem",
             fontWeight: "800",
-            border: '2px solid #713200',
-            color: '#713200',
           }
         },)
         setTimeout(() => {
@@ -46,20 +50,35 @@ function Thoughts() {
   };
 
   useEffect(() => {
-
     let conter = async () => {
-
       // console.log(user);
       const response = await axios.post("/api/users/addlike", user)
       // console.log(response);
-
     }
     conter()
   }, [user]);
 
-  let runner = () => {
-    setIsOpen(!isOpen)
+  let setter2 = async (username) => {
+    // console.log(username);
+    setcomment({...comment, userName:username })
+    // console.log(comment);
+
   }
+  let addcom = async (username) => {
+    // console.log(username);
+    setcomment({...comment, userName:username })
+
+    const response = await axios.post("/api/users/addcomment", comment)
+    console.log(response);
+
+    toast("Comment added")
+  }
+ 
+
+
+  const toggleComments = (postId) => {
+    setActivePost(activePost === postId ? null : postId);
+  };
 
 
   return (
@@ -87,56 +106,54 @@ function Thoughts() {
 
       <div className="card flex gap-4 justify-center p-4 flex-wrap ">
         {apiData?.map(item => (
-          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, transparent)` }} id='carder' key={item._id}>
+          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, #929292)` }} id='carder' key={item._id}>
 
             <div className='upper '>
-              <h1 className='texter2 top-2 text-right '>{item?.typer}</h1>
-
-              <h1 className='texter2 top-2 text-right mt-2 cursor-pointer ' onClick={() => setter(item.username)}>
-                <span class="material-symbols-outlined likebtn" style={{ color: "#bbb38f" }}>
-                  favorite
-                </span>
-                <h1 className=' mini -mt-1 mr-0.5'>like</h1>
-              </h1>
-
               <h1 className=' flex items-center '> <span className=" material-symbols-outlined m-0">person</span> {item?.username}</h1>
               <h2>{item?.email}</h2>
             </div>
             <div>
-              <h2>Thought</h2>
+              <h1 className='texter2 '>{item.typer}</h1>
               <h1 className='texter space'>{item?.thought}</h1>
             </div>
 
-            <div className=' flex items-center mini justify-end cursor-pointer' onClick={runner}>
-              <h1 className='miniplus'>Comments</h1>
-              <span class="material-symbols-outlined text-xs cursor-pointer miniplus" >
-                expand_all
-              </span>
+            <div className=' flex items-end border-b-2 border-black mini justify-between cursor-pointer 'onClick={() => setter2(item?.username)} >
+              <h1 className='texter2 top-2 text-right mt-2 cursor-pointer flex items-end' onClick={() => setter(item.username)}>
+                <span class="material-symbols-outlined likebtn" style={{ color: "#bbb38f" }}>
+                  favorite
+                </span>
+                <h1 className=' mini -mt-1 mr-0.5'>{item?.likecount} likes</h1>
+              </h1>
+
+              <div className=' flex items-center' onClick={() => toggleComments(item?._id)}>
+                <span class="material-symbols-outlined text-xs cursor-pointer miniplus" >
+                  comment
+                </span>
+                <h1 className='miniplus'>Comments</h1>
+              </div>
             </div>
 
-            {isOpen && (
-              <div>
-                <div className='flex justify-between flex-wrap items-center'>
-                  <div className=' flex items-center justify-between gap-1'>
-                    <textarea type="text" name="" id="small" className=' w-40 rounded-lg border-black px-2 backdrop-blur-3xl border bg-transparent placeholder:text-black' placeholder='Enter comment' />
-                    <button type="submit" className=' border border-black font-bold rounded-full  text-black px-2.5 py-1 text-xs'>Submit</button>
-                  </div>
+
+            {activePost === item._id && (
+              <div className='commenter text-black' >
+                <div className='editor select-none flex flex-wrap'>
+                  <input onChange={(e) => setcomment({ ...comment, comment: e.target.value })}
+                    type="text" placeholder='Enter comment' className=' bg-transparent placeholder:text-black border border-black rounded-full  px-2' />
+                  <button className=' bg-black text-white px-4 rounded-lg' onClick={() => addcom(item?.username)}>Submit</button>
                 </div>
 
-                <div className=' overflow-scroll max-h-20 scrollbar border-b p-2' >
-                  <div>
-                    <h1>Hello</h1>
-                    <h1 className='  text-wrap  max-h-10 overflow-scroll scrollbar'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, magnam!</h1>
+                {item.comments.map(com => (
+                  <div className='editor text-wrap'>
+                    <h1 className='fle items-center '>
+                      <span class="material-symbols-outlined miniplus">
+                        person
+                      </span>
+                      {com?.usercomment}
+                    </h1>
+                    <h2>{com?.comment}</h2>
                   </div>
-                  <div>
-                    <h1>Hello</h1>
-                    <h1 className='  text-wrap  max-h-10 overflow-scroll scrollbar'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, magnam!</h1>
-                  </div>
-                  <div>
-                    <h1>Hello</h1>
-                    <h1 className='  text-wrap  max-h-10 overflow-scroll scrollbar'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, magnam!</h1>
-                  </div>
-                </div>
+                ))}
+
               </div>
             )}
           </div>

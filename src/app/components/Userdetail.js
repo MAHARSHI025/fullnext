@@ -49,7 +49,6 @@ function Userdetail() {
 
     return (
         <>
-            {/* <Toaster></Toaster> */}
             <div className=' flex flex-col justify-center items-center '>
                 <div className=' formal flex-row'>
                     <h1 className=' font-bold text-4xl my-4 space  text-nowrap'>My profile</h1>
@@ -57,7 +56,7 @@ function Userdetail() {
 
                 <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80">
                     <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${userdata?.color} , #e4daaf, #e4daaf, black)` }} id='carder' >
-                        <h1 className='texter2 top-2 text-right text-orange-700'>{userdata?.typer}</h1>
+                        <h1 className='texter1 top-2 text-right text-orange-700'>{userdata?.typer}</h1>
                         <h1 className='texter3 top- text-right text-orange-700'>{userdata?.likecount} likes</h1>
 
                         <div className='upper'>

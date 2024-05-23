@@ -107,6 +107,25 @@ body {
 .temp {
   /* background-color: #e4daaf82; */
   border: 2px solid #e4daaf;
+  max-width: 25rem;
+}
+.commenter{
+  backdrop-filter: blur(1px);
+  background-color: #ffffff1a;
+  max-height: 8rem;
+  overflow: scroll;  
+}
+.commenter::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+.editor{
+  margin-bottom: 0.5rem;
+}
+.editor h1{
+  font-size: 15px !important;
+}
+.editor h2{
+  font-size: 10px !important;
 }
 
 .temp h1 {
@@ -127,12 +146,17 @@ body {
   font-weight: 800;
 }
 
-.texter2 {
+.texter1 {
   position: relative;
-  top: -15px;
-  right: -12px;
-  font-size: 10px !important;
+  top: -12px;
+  right: -5px;
+  font-size: 12px !important;
   color: wheat;
+}
+.texter2 {
+
+  font-size: 12px !important;
+  color: rgba(0, 0, 0, 0.871);
 }
 .texter3{
   position: relative;
@@ -174,15 +198,16 @@ body {
   padding: 0rem 0.8rem;
   border-radius: 5px;
 }
+
 .likebtn{
   user-select: none;
   transition: transform 0.5s ease, color 5.4s ease;
-  color: rgb(228 218 175) !important;
+  color: rgb(0, 0, 0) !important;
 }
 .likebtn:active{
   animation-name: example;
   animation-duration: 1s;
-  transform: scale(1.3);
+  transform: scale(2.3);
   color:  red;
 }
 @keyframes example {

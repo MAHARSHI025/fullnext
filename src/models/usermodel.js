@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Liken',
     },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Commen',
+    }],
 
     verifytoken: String,
     verifytokenexpiry: Date,
