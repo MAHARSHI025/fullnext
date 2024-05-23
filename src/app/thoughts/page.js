@@ -143,7 +143,7 @@ function Thoughts() {
                 </div>
 
                 {item.comments.map(com => (
-                  <div className='editor text-wrap'>
+                  <div className='editor text-wrap' key={com?._id}>
                     <h1 className='fle items-center '>
                       <span class="material-symbols-outlined miniplus">
                         person
