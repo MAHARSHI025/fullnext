@@ -3,7 +3,6 @@ import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken"
 import { cookies } from "next/headers";
-import Liker from "@/models/Likemodel";
 
 connect()
 
@@ -26,7 +25,8 @@ export async function POST(req) {
         // const consumer = await User.findById(decodedtoken?.id)
         // console.log(consumer);
 
-        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("likes comments")
+        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("comments")
+        // .populate("likes comments")
 
         // const shuffledArray = user;
         // for (let i = shuffledArray.length - 1; i > 0; i--) {

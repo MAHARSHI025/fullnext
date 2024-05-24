@@ -3,7 +3,7 @@ import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
-import Commenter from "@/models/Commentmodel";
+import Comment from "@/models/Commentmodel";
 
 connect();
 
@@ -26,7 +26,7 @@ export async function POST(req) {
         let tempuser = await User.findOne({ username: userName })
         let userId = tempuser._id
 
-        const newcomment = await Commenter.create({ userName, usercomment: usercomment, comment: comment });
+        const newcomment = await Comment.create({ userName, usercomment: usercomment, comment: comment });
 
         await User.findByIdAndUpdate(userId, { $push: { comments: newcomment._id } }, { new: true });
 
