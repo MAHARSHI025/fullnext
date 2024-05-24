@@ -11,8 +11,8 @@ export async function POST(req) {
 
     try {
 
-        const {  userName } = await req.json();
-        
+        const { userName } = await req.json();
+
         const cookieStore = cookies()
         const token = cookieStore.get('token')
         // console.log(token.value);
@@ -24,24 +24,24 @@ export async function POST(req) {
         }
         const decodedtoken = jwt.verify(token.value, process.env.TOKENSECRET)
         // console.log(decodedtoken);
+
         let userliked = decodedtoken.username
-        let tempuser = await User.findOne({username:userName})
+        let tempuser = await User.findOne({ username: userName })
         let userId = tempuser?._id
 
-        const alreadylike = await Liker.findOne({ userName: userName })
-        if (alreadylike) {
+        const alreadyadd = await Liker.findOne({ userName: userName })
+        if (alreadyadd) {
 
-            let namer = await Liker.find({ userliked: userliked })
-            // console.log(namer.length);
+            console.log(alreadyadd.userliked.includes(userliked));
 
-            if (namer?.length >= 1) {
+            if (alreadyadd.userliked.includes(userliked) === true) {
                 return NextResponse.json({
                     namer,
                     message: "You already like this thought",
                     success: false
                 });
-
             }
+
 
             let likearray = await Liker.findOneAndUpdate({ userName: userName }, { $push: { userliked: userliked } })
             // let insider = likearray.userliked

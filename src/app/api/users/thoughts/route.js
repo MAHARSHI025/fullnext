@@ -24,8 +24,8 @@ export async function POST(req) {
 
 
         const decodedtoken = jwt.verify(token.value, process.env.TOKENSECRET)
-        // const consumer = await User.findById(decodedtoken?.id)
-        // console.log(consumer);
+        const consumer = await User.findById(decodedtoken?.id)
+        let taker = consumer.username
 
         const user = await User.find({ isverified: true }).populate("likes","",Liker).populate("comments","",Comment)
         // .populate("likes comments")
@@ -38,6 +38,7 @@ export async function POST(req) {
         // console.log(shuffledArray);
 
         return NextResponse.json({
+            taker,
             user,
             message: "Authorized successfull",
             success: true

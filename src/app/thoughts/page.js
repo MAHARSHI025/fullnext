@@ -13,6 +13,7 @@ function Thoughts() {
 
   const [apiData, setApiData] = useState([]);
   const [user, setuser] = useState({ userName: "" })
+  const [taker, settaker] = useState("")
   const [showDiv, setShowDiv] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
   const [activePost, setActivePost] = useState(null);
@@ -28,6 +29,7 @@ function Thoughts() {
       const thoughts = await axios.post("/api/users/thoughts")
       console.log(thoughts);
       setApiData(thoughts.data.user)
+      settaker(thoughts.data.taker)
 
       if (thoughts.data.error === "Unauthorize user") {
         toast("Please Login First", {
@@ -53,27 +55,29 @@ function Thoughts() {
     let conter = async () => {
       // console.log(user);
       const response = await axios.post("/api/users/addlike", user)
-      // console.log(response);
+      console.log(response);
+
+
     }
     conter()
   }, [user]);
 
   let setter2 = async (username) => {
     // console.log(username);
-    setcomment({...comment, userName:username })
+    setcomment({ ...comment, userName: username })
     // console.log(comment);
 
   }
   let addcom = async (username) => {
     // console.log(username);
-    setcomment({...comment, userName:username })
+    setcomment({ ...comment, userName: username })
 
     const response = await axios.post("/api/users/addcomment", comment)
     console.log(response);
 
     toast("Comment added")
   }
- 
+
 
 
   const toggleComments = (postId) => {
@@ -117,11 +121,22 @@ function Thoughts() {
               <h1 className='texter space'>{item?.thought}</h1>
             </div>
 
-            <div className=' flex items-end border-b-2 border-black mini justify-between cursor-pointer 'onClick={() => setter2(item?.username)} >
+            <div className=' flex items-end border-b-2 border-black mini justify-between cursor-pointer ' onClick={() => setter2(item?.username)} >
               <h1 className='texter2 top-2 text-right mt-2 cursor-pointer flex items-end' onClick={() => setter(item.username)}>
-                <span class="material-symbols-outlined likebtn" style={{ color: "#bbb38f" }}>
-                  favorite
-                </span>
+
+                <div>
+                  {item.likes?.userliked.indexOf(taker) === -1 ? (
+                    // not liked
+                      <span class="material-symbols-outlined likebtn2" style={{ color: "black" }}>
+                        favorite
+                      </span>
+                  ) : (
+                    // liked
+                      <span class="material-symbols-outlined likebtn">
+                        favorite
+                      </span>
+                  )}
+                </div>
                 <h1 className=' mini -mt-1 mr-0.5'>{item?.likecount} likes</h1>
               </h1>
 
@@ -136,6 +151,7 @@ function Thoughts() {
 
             {activePost === item._id && (
               <div className='commenter text-black' >
+
                 <div className='editor select-none flex flex-wrap'>
                   <input onChange={(e) => setcomment({ ...comment, comment: e.target.value })}
                     type="text" placeholder='Enter comment' className=' bg-transparent placeholder:text-black border border-black rounded-full  px-2' />
