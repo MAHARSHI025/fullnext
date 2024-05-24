@@ -113,7 +113,7 @@ function Thoughts() {
               <h2>{item?.email}</h2>
             </div>
             <div>
-              <h1 className='texter2 '>{item.typer}</h1>
+              <h1 className='texter2 '>{item?.typer}</h1>
               <h1 className='texter space'>{item?.thought}</h1>
             </div>
 

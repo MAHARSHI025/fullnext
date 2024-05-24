@@ -25,7 +25,7 @@ export async function POST(req) {
         // const consumer = await User.findById(decodedtoken?.id)
         // console.log(consumer);
 
-        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("comments")
+        const user = await User.find({ isverified: true }).select("-password -isverified -verifytoken -verifytokenexpiry").populate("likes comments")
         // .populate("likes comments")
 
         // const shuffledArray = user;

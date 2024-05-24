@@ -26,7 +26,7 @@ export async function POST(req) {
         // console.log(decodedtoken);
         let userliked = decodedtoken.username
         let tempuser = await User.findOne({username:userName})
-        let userId = tempuser._id
+        let userId = tempuser?._id
 
         const alreadylike = await Liker.findOne({ userName: userName })
         if (alreadylike) {
@@ -59,7 +59,7 @@ export async function POST(req) {
         // Create a new like
         const newLike = await Liker.create({ userName, userliked: userliked });
 
-        await User.findByIdAndUpdate(userId, { $push: { likes: newLike._id } });
+        await User.findByIdAndUpdate(userId, { $push: { likes: newLike?._id } });
 
         let likecount = await User.findOneAndUpdate({ username: userName }, { $inc: { likecount: 1 } }, { new: true })
 
