@@ -3,6 +3,7 @@ import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken"
 import { cookies } from "next/headers";
+import Liker from "@/models/Likemodel";
 
 connect()
 
@@ -25,7 +26,7 @@ export async function POST(req) {
         // const consumer = await User.findById(decodedtoken?.id)
         // console.log(consumer);
 
-        const user = await User.find({ isverified: true })
+        const user = await User.find({ isverified: true }).populate("likes","",Liker)
         // .populate("likes comments")
 
         // const shuffledArray = user;
