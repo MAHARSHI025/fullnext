@@ -36,7 +36,6 @@ export async function POST(req) {
 
             if (alreadyadd.userliked.includes(userliked) === true) {
                 return NextResponse.json({
-                    namer,
                     message: "You already like this thought",
                     success: false
                 });

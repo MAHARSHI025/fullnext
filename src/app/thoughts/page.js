@@ -85,6 +85,7 @@ function Thoughts() {
   };
 
 
+
   return (
     <div>
 
@@ -99,7 +100,7 @@ function Thoughts() {
         <div className="midderplus" id="midderplus">
           <div className="midder flex flex-col items-end p-2 border-2 border-black rounded-lg">
             <button onClick={() => setShowDiv(!showDiv)}>
-              <span class="material-symbols-outlined">
+              <span className="material-symbols-outlined">
                 close
               </span>
             </button>
@@ -127,24 +128,28 @@ function Thoughts() {
                 <div>
                   {item.likes?.userliked.indexOf(taker) === -1 ? (
                     // not liked
-                      <span class="material-symbols-outlined likebtn2" style={{ color: "black" }}>
-                        favorite
-                      </span>
+                    <span className=" material-symbols-outlined likebtn2" >
+                      favorite
+                    </span>
                   ) : (
                     // liked
-                      <span class="material-symbols-outlined likebtn">
-                        favorite
-                      </span>
+                    <span className=" material-symbols-outlined likebtn">
+                      favorite
+                    </span>
                   )}
                 </div>
                 <h1 className=' mini -mt-1 mr-0.5'>{item?.likecount} likes</h1>
               </h1>
 
-              <div className=' flex items-center' onClick={() => toggleComments(item?._id)}>
-                <span class="material-symbols-outlined text-xs cursor-pointer miniplus" >
+              <div className=' flex items-center gap-1' onClick={() => toggleComments(item?._id)}>
+                <span className="material-symbols-outlined text-xs cursor-pointer miniplus" >
                   comment
                 </span>
-                <h1 className='miniplus'>Comments</h1>
+                <div>
+
+                <h1 className='miniplus'> {item?.comments.length} Comments</h1>
+                <h1 className='miniplus'></h1>
+                </div>
               </div>
             </div>
 
@@ -161,7 +166,7 @@ function Thoughts() {
                 {item.comments.map(com => (
                   <div className='editor text-wrap' key={com?._id}>
                     <h1 className='fle items-center '>
-                      <span class="material-symbols-outlined miniplus">
+                      <span className="material-symbols-outlined miniplus">
                         person
                       </span>
                       {com?.usercomment}

@@ -21,12 +21,12 @@ function Search() {
 
         let responce = await axios.post("/api/users/profile", user)
         let main = responce.data.user
-        // console.log(responce);
+        console.log(responce);
 
         if (responce.data.error === "user not found") {
             toast.error("User not found.",
             )
-        
+
         }
         else {
             toast.success("User found successfully")
@@ -65,6 +65,8 @@ function Search() {
                     </div>
                 </div>
             </div>
+
+   
 
 
         </>

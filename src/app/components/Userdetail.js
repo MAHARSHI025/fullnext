@@ -55,23 +55,29 @@ function Userdetail() {
                 </div>
 
                 <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80">
-                    <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${userdata?.color} , #e4daaf, #e4daaf, black)` }} id='carder' >
-                        <h1 className='texter1 top-2 text-right text-orange-700'>{userdata?.typer}</h1>
+                    <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${userdata?.color} , #e4daaf, #e4daaf, #929292)`, border: "2px solid black" }} id='carder' >
+                        <h1 className='texter1 top-2 text-right text-black'>{userdata?.typer}</h1>
                         <h1 className='texter3 top- text-right text-orange-700'>{userdata?.likecount} likes</h1>
 
-                        <div className='upper'>
-                            <h1 className=' flex items-center m-0'>
-                                <span class="material-symbols-outlined m-0">
-                                    person
-                                </span>
-                                {userdata?.username}
-                            </h1>
+                        <div className='upper '>
+                            <h1 className=' flex items-center '> <span className=" material-symbols-outlined m-0">person</span> {userdata?.username}</h1>
                             <h2>{userdata?.email}</h2>
                         </div>
                         <div>
-                            <h2>Thought</h2>
+                            <h1 className='texter2 '>{userdata?.typer}</h1>
                             <h1 className='texter space'>{userdata?.thought}</h1>
                         </div>
+                        {userdata?.comments?.map(com => (
+                            <div className='editor text-wrap' key={com?._id}>
+                                <h1 className='fle items-center '>
+                                    <span className="material-symbols-outlined miniplus">
+                                        person
+                                    </span>
+                                    {com?.usercomment}
+                                </h1>
+                                <h2>{com?.comment}</h2>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
