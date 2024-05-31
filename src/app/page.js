@@ -17,7 +17,7 @@ export default function Home() {
         <div className="info bgier flex flex-wrap-reverse justify-center items-center mx-4 ">
           <div className="area flex flex-col justify-center gap-4">
             <h1 className=" text-6xl font-bold space max-w-96">Explore worlds mind</h1>
-            <h1 className=" font-extralight text-xs" >ThoughtShare is an innovative and engaging platform designed for users to express their thoughts, ideas, and musings freely. Whether it's a profound insight, a fleeting reflection, or a creative inspiration.</h1>
+            <h1 className=" font-extralight text-xs" >ThoughtShare is an innovative and engaging platform designed for users to express their thoughts, ideas, and musings freely. Whether it is a profound insight, a fleeting reflection, or a creative inspiration.</h1>
           </div>
           <div className="lootie ">
             <dotlottie-player src="https://lottie.host/8c0d9651-94d8-46ad-9f3e-d06ef100a470/ClMzMGK47k.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
