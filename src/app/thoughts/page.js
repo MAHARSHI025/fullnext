@@ -40,7 +40,7 @@ function Thoughts() {
         },)
         setTimeout(() => {
           router.push("/login")
-        }, 1500);
+        }, 800);
       }
     }
     getall()
