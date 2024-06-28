@@ -1,7 +1,13 @@
 "use client"
 import Link from "next/link";
 import Texter from "./components/Texter";
+
+
 export default function Home() {
+
+
+
+
 
 
   return (
@@ -23,8 +29,8 @@ export default function Home() {
             <dotlottie-player src="https://lottie.host/8c0d9651-94d8-46ad-9f3e-d06ef100a470/ClMzMGK47k.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
           </div>
         </div>
-        <div className="info info2 flex  justify-center items-center mx-4">
-          <div className="lootie lootie2">
+        <div className="info info2 flex  justify-center items-center mx-4" >
+          <div className="lootie lootie2" >
             <dotlottie-player src="https://lottie.host/e7c954e1-040b-43a0-9616-bf80c6f56dfb/xh0yxjcu9o.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
           </div>
           <div className="area area2 flex  flex-col justify-center gap-4">

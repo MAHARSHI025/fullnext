@@ -30,12 +30,12 @@ export async function POST(req) {
         const user = await User.find({ isverified: true }).populate("likes","",Liker).populate("comments","",Comment)
         // .populate("likes comments")
 
-        // const shuffledArray = user;
-        // for (let i = shuffledArray.length - 1; i > 0; i--) {
-        //     const j = Math.floor(Math.random() * (i + 1));
-        //     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-        // }
-        // console.log(shuffledArray);
+        const shuffledArray = user;
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        console.log(shuffledArray);
 
         return NextResponse.json({
             taker,
