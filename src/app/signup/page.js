@@ -115,8 +115,10 @@ function Signup() {
       <div className=' mb-6'>
         <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
+            <span class="material-symbols-outlined topicon">
+              person_add
+            </span>
             <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
-
             <div className=' flex justify-center items-center gap-1'>
               <span class="material-symbols-outlined m-0">
                 person
@@ -145,7 +147,7 @@ function Signup() {
               <span class="material-symbols-outlined m-0">
                 key
               </span>
-              <input type={password? "text":"password"}
+              <input type={password ? "text" : "password"}
                 value={user.password}
                 onChange={(e) => setuser({ ...user, password: e.target.value })}
                 placeholder='Password'

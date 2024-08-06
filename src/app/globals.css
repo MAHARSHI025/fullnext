@@ -42,6 +42,10 @@ body {
 .card {
   background-color: black;
 }
+.topicon{
+  font-size: 5rem !important;
+  text-align: center;
+}
 
 .formal {
   display: flex;
@@ -49,6 +53,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   /* max-width: 2rem; */
+  text-align: center;
+  
 }
 
 .formal form {
@@ -56,6 +62,10 @@ body {
   padding: 3rem;
   border-radius: 10px;
   border: 1px solid;
+  /* height: 100vh; */
+}
+form img{
+  height: 5rem;
 }
 
 .formal input {
@@ -111,6 +121,7 @@ body {
   /* background-color: #e4daaf82; */
   border: 2px solid #e4daaf;
   max-width: 25rem;
+  color: white !important;
 }
 
 .commenter {
@@ -140,6 +151,7 @@ body {
 .temp h1 {
   font-size: 1.3rem;
   font-weight: bold;
+  color: white !important;
 }
 
 .temp h2 {
@@ -179,7 +191,7 @@ body {
 
 .mini {
   font-size: 10px !important;
-  color: black;
+  border-color: white;
 }
 
 .miniplus {
@@ -216,7 +228,9 @@ body {
   padding: 0rem 0.8rem;
   border-radius: 5px;
 }
-
+.likebtn2{
+  color: white;
+}
 .likebtn {
   user-select: none;
   transition: transform 0.5s ease, color 5.4s ease;

@@ -59,7 +59,10 @@ function Login() {
       {/* <Toaster /> */}
       <div className="formal flex-col" >
         <form className=" flex justify-center items-center flex-col gap-2" >
+          <div className='iconimage'>  
+          <img src="https://cdn-icons-png.flaticon.com/512/5509/5509636.png" alt="" />
           <h1 className=' font-bold text-4xl my-4 space'>Login</h1>
+          </div>
           <div className=' flex justify-center items-center gap-1'>
             <span class="material-symbols-outlined m-0">
               mail
@@ -89,9 +92,9 @@ function Login() {
             </div>
           </div>
         </form>
-        <button type="submit" onClick={onlogin} id='signup' className=' text-xl my-2'>Login</button>
-        <h1>or</h1>
-        <button type="submit" className=' logoutbtn'><Link href={"/signup"}>Signup</Link></button>
+          <button type="submit" onClick={onlogin} id='signup' className=' text-xl my-2'>Login</button>
+          <h1>or</h1>
+          <button type="submit" className=' logoutbtn'><Link href={"/signup"}>Signup</Link></button>
       </div>
     </>
   )

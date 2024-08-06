@@ -17,6 +17,8 @@ function Dropdown() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  
   const onlogout = async () => {
     const response = await axios.get("/api/users/logout")
     // console.log(response);

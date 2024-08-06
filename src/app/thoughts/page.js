@@ -111,7 +111,7 @@ function Thoughts() {
 
       <div className="card flex gap-4 justify-center p-4 flex-wrap ">
         {apiData?.map(item => (
-          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${item?.color} , #e4daaf, #e4daaf, #929292)` }} id='carder' key={item._id}>
+          <div data-aos="fade-up" data-aos-once="true" className="temp flex flex-col p-4 rounded-lg gap-4" style={{ border: `2px solid ${item?.color}` }} id='carder' key={item._id}>
 
             <div className='upper '>
               <h1 className=' flex items-center '> <span className=" material-symbols-outlined m-0">person</span> {item?.username}</h1>
