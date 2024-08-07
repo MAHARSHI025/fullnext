@@ -50,19 +50,19 @@ function Dropdown() {
               aria-expanded="true"
             >
 
-              <span class="material-symbols-outlined">
+              <span class="material-symbols-outlined bg-black">
                 person
               </span>
             </button>
 
             {isOpen && (
               <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 blicker" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                <div className="closer" role="none">
-                  <Link onClick={toggleDropdown} href="/profile" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"> <span class="mx-1 material-symbols-outlined">person</span>Profile</Link>
+                <div className="closer bg-neutral-900 border" role="none">
+                  <Link onClick={toggleDropdown} href="/profile" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-600 " role="menuitem"> <span class="mx-1 material-symbols-outlined">person</span>Profile</Link>
                   <hr className=' w-full' />
-                  <Link onClick={toggleDropdown} href="/signup" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">person_add</span>Signup</Link>
-                  <Link onClick={toggleDropdown} href="/login" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">login</span> Login</Link>
-                  <Link onClick={onlogout} href="/" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-300 " role="menuitem"><span class="mx-1 material-symbols-outlined">logout</span>Logout</Link>
+                  <Link onClick={toggleDropdown} href="/signup" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-600 " role="menuitem"><span class="mx-1 material-symbols-outlined">person_add</span>Signup</Link>
+                  <Link onClick={toggleDropdown} href="/login" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-600 " role="menuitem"><span class="mx-1 material-symbols-outlined">login</span> Login</Link>
+                  <Link onClick={onlogout} href="/" className=" flex items-center px-4 py-2 text-sm  hover:bg-neutral-600 " role="menuitem"><span class="mx-1 material-symbols-outlined">logout</span>Logout</Link>
                 </div>
               </div>
             )}

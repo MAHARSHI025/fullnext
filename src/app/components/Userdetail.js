@@ -55,7 +55,7 @@ function Userdetail() {
                 </div>
 
                 <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80">
-                    <div className="temp flex flex-col p-4 rounded-lg gap-4" style={{ backgroundImage: `linear-gradient(10deg, ${userdata?.color} , #e4daaf, #e4daaf, #929292)`, border: "2px solid black" }} id='carder' >
+                    <div className="temp flex flex-col p-4 rounded-lg gap-4 bg-black" style={{ border: `2px solid ${userdata?.color}`}} id='carder' >
                         <h1 className='texter1 top-2 text-right text-black'>{userdata?.typer}</h1>
                         <h1 className='texter3 top- text-right text-orange-700'>{userdata?.likecount} likes</h1>
 
@@ -64,7 +64,7 @@ function Userdetail() {
                             <h2>{userdata?.email}</h2>
                         </div>
                         <div>
-                            <h1 className='texter2 '>{userdata?.typer}</h1>
+                            <h1 className='texter2 '>Thought</h1>
                             <h1 className='texter space'>{userdata?.thought}</h1>
                         </div>
                         {userdata?.comments?.map(com => (

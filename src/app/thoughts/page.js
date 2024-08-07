@@ -159,7 +159,7 @@ function Thoughts() {
 
                 <div className='editor select-none flex flex-wrap'>
                   <input onChange={(e) => setcomment({ ...comment, comment: e.target.value })}
-                    type="text" placeholder='Enter comment' className=' bg-transparent placeholder:text-black border border-black rounded-full  px-2' />
+                    type="text" placeholder='Enter comment' className=' bg-transparent placeholder:text-white border border-white rounded-full  px-2' />
                   <button className=' bg-black text-white px-4 rounded-lg' onClick={() => addcom(item?.username)}>Submit</button>
                 </div>
 

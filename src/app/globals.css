@@ -34,15 +34,19 @@ body {
 }
 
 .navbar {
-  background-color: #fffbf0;
+  background-color: #000000;
+  color: white;
   z-index: 10;
   position: relative;
+  border-bottom: 1px solid;
+  border-color: #1e1e1e;
 }
 
 .card {
   background-color: black;
 }
-.topicon{
+
+.topicon {
   font-size: 5rem !important;
   text-align: center;
 }
@@ -54,17 +58,19 @@ body {
   gap: 0.5rem;
   /* max-width: 2rem; */
   text-align: center;
-  
+
 }
 
 .formal form {
-  background-color: #ebe8dc;
+  background-color: transparent;
+  margin-top: 1rem;
   padding: 3rem;
   border-radius: 10px;
   border: 1px solid;
   /* height: 100vh; */
 }
-form img{
+
+form img {
   height: 5rem;
 }
 
@@ -86,11 +92,17 @@ form img{
   border: 2px solid black;
   padding: 0.1rem 1rem;
   border-radius: 5px;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   font-weight: 500;
 }
-
+.extro input{
+  border: 2px solid black;
+  padding: 0.2rem;
+  border-radius: 5px;
+  width: 15rem;
+  border: 2px solid white;
+}
 .align {
   position: relative;
   right: 2rem;
@@ -129,15 +141,21 @@ form img{
   background-color: #ffffff1a;
   max-height: 8rem;
   overflow: scroll;
+  color: white;
 }
 
 .commenter::-webkit-scrollbar {
   display: none;
   /* Safari and Chrome */
+
 }
 
 .editor {
   margin-bottom: 0.5rem;
+}
+.editor input{
+  color: white !important ;
+
 }
 
 .editor h1 {
@@ -228,9 +246,11 @@ form img{
   padding: 0rem 0.8rem;
   border-radius: 5px;
 }
-.likebtn2{
+
+.likebtn2 {
   color: white;
 }
+
 .likebtn {
   user-select: none;
   transition: transform 0.5s ease, color 5.4s ease;
@@ -375,9 +395,11 @@ hr {
 }
 
 .midder {
-  background-color: white;
+  background-color: black;
   position: absolute;
+  color: white;
   z-index: 100;
+  border: 1px solid;
 }
 
 #midderplus {
@@ -386,16 +408,23 @@ hr {
 }
 
 .btnclass {
-  background-color: #423e2d;
+  background-color: #363636;
+  ;
   margin: 0;
   padding: 0.2rem;
   /* overflow-x: scroll; */
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #8f8f8f;
+  box-shadow: 0px 4px 20px 0px black;
 }
 
 .linebtn {
-  background-color: #e4daaf;
+  background-color: #bbbbbb;
+  ;
+  background-color: ;
   font-weight: 700;
-  border: 2px solid white;
+  border: 2px solid #414141;
   padding: 0.1rem 1rem;
   border-radius: 20px;
   text-wrap: nowrap;
@@ -416,7 +445,7 @@ hr {
   height: 8rem;
   padding: 0.5rem 1rem;
   overflow: scroll;
-  scrollbar-width: none;
+  scrollbar-width: thin;
   scroll-behavior: smooth;
 }
 
