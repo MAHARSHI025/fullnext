@@ -2,30 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
-
+#root{
+  background-color: #000000; 
+}
 
 body {
   color: black;
-  background-color: #fffbf0;
+  background-color: #000000;
   font-family: "Open Sans", sans-serif !important;
 }
 
@@ -38,8 +26,6 @@ body {
   color: white;
   z-index: 10;
   position: relative;
-  border-bottom: 1px solid;
-  border-color: #1e1e1e;
 }
 
 .card {
@@ -58,16 +44,18 @@ body {
   gap: 0.5rem;
   /* max-width: 2rem; */
   text-align: center;
-
+  background-color: #000000;
+  color: white;
 }
 
 .formal form {
-  background-color: transparent;
+  background-color: rgb(21, 21, 21);
   margin-top: 1rem;
   padding: 3rem;
   border-radius: 10px;
-  border: 1px solid;
+  border: 1px solid white;
   /* height: 100vh; */
+  color: white;
 }
 
 form img {
@@ -79,6 +67,9 @@ form img {
   padding: 0.2rem;
   border-radius: 5px;
   width: 15rem;
+  /* background-color: black !important; */
+  font-size: 18px;
+  color: black;
 }
 
 .formal textarea {
@@ -86,18 +77,21 @@ form img {
   padding: 0.2rem;
   border-radius: 5px;
   width: 15rem;
+  color: black;
 }
 
 .formal button {
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   padding: 0.1rem 1rem;
   border-radius: 5px;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
   font-weight: 500;
 }
+.eye-icon{
+  color: black;
+}
 .extro input{
-  border: 2px solid black;
   padding: 0.2rem;
   border-radius: 5px;
   width: 15rem;
@@ -106,6 +100,14 @@ form img {
 .align {
   position: relative;
   right: 2rem;
+}
+#signup:active{
+  background-color: black;
+  color: white;
+}
+#signup:hover{
+  background-color: white;
+  color: black;
 }
 
 .main {
@@ -118,8 +120,9 @@ form img {
 }
 
 .btn button {
-  border: 2px solid white;
+  border: 1px solid white;
   font-weight: 200;
+  font-size: 15px;
 }
 
 .mainbtn {
@@ -127,6 +130,8 @@ form img {
   color: #000000;
   margin-right: 0.5rem;
   font-weight: 900 !important;
+  border: 2px solid white !important;
+  font-size: 20px !important;
 }
 
 .temp {
@@ -283,19 +288,19 @@ form img {
 }
 
 .downer {
-  background-color: #fffbf0;
+  background-color: #000000;
 }
 
 .downer2 {
-  background-color: antiquewhite;
-  border: 1px solid rgb(196, 167, 129);
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
 }
 
 .logoutbtn {
   background-color: transparent !important;
   border: none !important;
-  color: black !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .info {
@@ -447,14 +452,19 @@ hr {
   overflow: scroll;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 .closer {
   cursor: pointer;
+  background-color: black;
 }
 
 .closer h1 {
   padding: 0.3rem 0.8rem;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width:500px) {
@@ -487,7 +497,9 @@ hr {
     justify-content: center;
     margin-bottom: 1rem;
   }
-
+  .formal form{
+    padding: 2rem 0rem;
+  }
   .lootie {
     margin-bottom: -2rem;
     margin-top: -1rem;

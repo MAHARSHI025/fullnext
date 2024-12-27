@@ -153,7 +153,7 @@ function Signup() {
                 placeholder='Password'
                 required
               />
-              <div className=' absolute align cursor-pointer flex items-center'>
+              <div className=' absolute align cursor-pointer eye-icon  flex items-center'>
                 <span class="material-symbols-outlined m-0 select-none" onClick={visible}>
                   {icon ? "visibility" : "visibility_off"}
                 </span>
@@ -220,7 +220,7 @@ function Signup() {
             </div>
 
           </form>
-          <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50'>Signup</button>
+          <button type="submit" onClick={onsignup} id='signup' className=' my-2 from-neutral-50 text-xl'>Signup</button>
           <h1>or</h1>
           <button type="submit" className=' logoutbtn'><Link href={"/login"}>login</Link></button>
         </div >

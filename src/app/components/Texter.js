@@ -15,7 +15,7 @@ function Texter() {
                             <h1 className=" text-center text-5xl  space font-black">Thought is Forever</h1>
                             <div className="btn">
                                 <Link href={"/thoughts"}><button type="submit" className=' my-2 border-2 px-4 py-1 rounded-lg mainbtn'>Explore</button></Link>
-                                <Link href={"#about"}><button type="submit" className=' my-2 border-2 px-4 py-1 rounded-lg subbtn'>Read about</button></Link>
+                                <Link href={"#about"}><button type="submit" className=' my-2 border-2 px-4 py-1 rounded-lg subbtn'>Read more</button></Link>
                             </div>
                         </div>
                     </div>

@@ -38,9 +38,7 @@ function Thoughts() {
             fontWeight: "800",
           }
         },)
-        setTimeout(() => {
-          router.push("/login")
-        }, 800);
+        router.push("/login")
       }
     }
     getall()
@@ -147,8 +145,8 @@ function Thoughts() {
                 </span>
                 <div>
 
-                <h1 className='miniplus'> {item?.comments.length} Comments</h1>
-                <h1 className='miniplus'></h1>
+                  <h1 className='miniplus'> {item?.comments.length} Comments</h1>
+                  <h1 className='miniplus'></h1>
                 </div>
               </div>
             </div>
