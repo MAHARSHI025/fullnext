@@ -18,12 +18,13 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     thought: {
-        type: String,
-        required: true,
+        type: [String],
+        default: [],
     },
+
     isverified: {
         type: Boolean,
-        default: false
+        default: true
     },
     color: {
         type: String,

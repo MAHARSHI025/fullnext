@@ -35,7 +35,7 @@ export async function POST(req) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
         }
-        console.log(shuffledArray);
+        // console.log(shuffledArray);
 
         return NextResponse.json({
             taker,

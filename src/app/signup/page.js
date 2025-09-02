@@ -17,7 +17,7 @@ function Signup() {
     email: "",
     username: "",
     password: "",
-    thought: "",
+    thought: [],
     color: "transparent",
     typer: "think",
   })
@@ -115,12 +115,12 @@ function Signup() {
       <div className=' mb-6'>
         <div className="formal flex-col" >
           <form className=" flex justify-center items-center flex-col gap-2" >
-            <span class="material-symbols-outlined topicon">
+            <span className="material-symbols-outlined topicon">
               person_add
             </span>
             <h1 className=' font-bold text-4xl my-4 space'>Signup</h1>
             <div className=' flex justify-center items-center gap-1'>
-              <span class="material-symbols-outlined m-0">
+              <span className="material-symbols-outlined m-0">
                 person
               </span>
               <input type="text"
@@ -132,7 +132,7 @@ function Signup() {
             </div>
 
             <div className=' flex justify-center items-center gap-1'>
-              <span class="material-symbols-outlined m-0">
+              <span className="material-symbols-outlined m-0">
                 mail
               </span>
               <input type="email"
@@ -144,7 +144,7 @@ function Signup() {
             </div>
 
             <div className=' flex justify-center items-center gap-1 ml-7'>
-              <span class="material-symbols-outlined m-0">
+              <span className="material-symbols-outlined m-0">
                 key
               </span>
               <input type={password ? "text" : "password"}
@@ -154,14 +154,14 @@ function Signup() {
                 required
               />
               <div className=' absolute align cursor-pointer eye-icon  flex items-center'>
-                <span class="material-symbols-outlined m-0 select-none" onClick={visible}>
+                <span className="material-symbols-outlined m-0 select-none" onClick={visible}>
                   {icon ? "visibility" : "visibility_off"}
                 </span>
               </div>
             </div>
 
             <div className=' flex justify-center items-start  gap-1'>
-              <span class="material-symbols-outlined m-0 mt-1">
+              <span className="material-symbols-outlined m-0 mt-1">
                 psychology
               </span>
               <textarea
@@ -183,7 +183,7 @@ function Signup() {
                   onClick={toggleDropdown}
                 >
                   {value}
-                  <span class="material-symbols-outlined m-0">
+                  <span className="material-symbols-outlined m-0">
                     expand_more
                   </span>
                 </h1>

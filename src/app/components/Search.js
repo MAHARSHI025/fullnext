@@ -42,13 +42,13 @@ function Search() {
                 <h1 className=' font-bold text-4xl my-4 space'>Search User</h1>
                 <div className=' formal flex-row flex extro'>
                     <input type="text"
-                        className=' bg-transparent'
+                        className=' bg-transparent text-white'
                         value={user.username}
                         onChange={(e) => setuser({ ...user, username: e.target.value })}
                         placeholder='Username'
                         required
                     />
-                    <button onClick={searcher} className=' flex justify-center items-center'> <span class="material-symbols-outlined">search</span></button>
+                    <button onClick={searcher} className=' flex justify-center items-center'> <span className="material-symbols-outlined">search</span></button>
                 </div>
 
                 <div className=" flex gap-4 justify-center items-center p-4 flex-wrap max-w-80">

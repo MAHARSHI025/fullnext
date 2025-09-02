@@ -13,7 +13,7 @@ export async function POST(NextRequest){
         const {username, email, password, thought, color, typer} = reqbody
         console.log(reqbody);
 
-        if (username === "" || email === "" || password === "" || thought === "") {
+        if (username === "" || email === "" || password === "" || thought === '') {
             return NextResponse.json({
                 error: "Input is required",
                 Status: 400,
@@ -35,7 +35,7 @@ export async function POST(NextRequest){
             email,
             username,
             password: hashedpassword,
-            thought,
+            thought:[thought],
             typer,
             color,
         })

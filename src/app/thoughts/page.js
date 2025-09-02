@@ -71,7 +71,7 @@ function Thoughts() {
     setcomment({ ...comment, userName: username })
 
     const response = await axios.post("/api/users/addcomment", comment)
-    console.log(response);
+    // console.log(response);
 
     toast("Comment added")
   }
@@ -96,7 +96,7 @@ function Thoughts() {
 
       {showDiv && (
         <div className="midderplus" id="midderplus">
-          <div className="midder flex flex-col items-end p-2 border-2 border-black rounded-lg">
+          <div className="midder flex flex-col items-end p-2 border-2 border-black text-white rounded-lg">
             <button onClick={() => setShowDiv(!showDiv)}>
               <span className="material-symbols-outlined">
                 close
@@ -115,10 +115,11 @@ function Thoughts() {
               <h1 className=' flex items-center '> <span className=" material-symbols-outlined m-0">person</span> {item?.username}</h1>
               <h2>{item?.email}</h2>
             </div>
-            <div>
-              <h1 className='texter2 '>{item?.typer}</h1>
-              <h1 className='texter space'>{item?.thought}</h1>
-            </div>
+                <div>
+                  <h1 className="texter2">{item?.typer}</h1>
+                 
+                  {item.thought.map((f)=> <p className="texter space">{f}</p>)}
+                </div>
 
             <div className=' flex items-end border-b-2 border-black mini justify-between cursor-pointer ' onClick={() => setter2(item?.username)} >
               <h1 className='texter2 top-2 text-right mt-2 cursor-pointer flex items-end' onClick={() => setter(item.username)}>
@@ -157,7 +158,7 @@ function Thoughts() {
 
                 <div className='editor select-none flex flex-wrap'>
                   <input onChange={(e) => setcomment({ ...comment, comment: e.target.value })}
-                    type="text" placeholder='Enter comment' className=' bg-transparent placeholder:text-white border border-white rounded-full  px-2' />
+                    type="text" placeholder='Enter comment' className='text-white bg-transparent placeholder:text-white border border-white rounded-full  px-2' />
                   <button className=' bg-black text-white px-4 rounded-lg' onClick={() => addcom(item?.username)}>Submit</button>
                 </div>
 

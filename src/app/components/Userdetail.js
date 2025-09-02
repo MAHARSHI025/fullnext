@@ -66,6 +66,7 @@ function Userdetail() {
                         <div>
                             <h1 className='texter2 '>Thought</h1>
                             <h1 className='texter space'>{userdata?.thought}</h1>
+                            {/* {userdata?.thought?.map((f)=> <p className="texter space">{f}</p>)} */}
                         </div>
                         {userdata?.comments?.map(com => (
                             <div className='editor text-wrap' key={com?._id}>

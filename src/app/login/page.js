@@ -59,15 +59,15 @@ function Login() {
       {/* <Toaster /> */}
       <div className="formal flex-col" >
         <form className=" flex justify-center items-center flex-col gap-2" >
-          <div className='iconimage'>
+          <div className='iconimage text-white'>
             {/* <img src="https://cdn-icons-png.flaticon.com/512/5509/5509636.png" alt="" /> */}
-            <span class="material-symbols-outlined topicon">
+            <span className="material-symbols-outlined topicon">
               assignment_ind
             </span>
             <h1 className=' font-bold text-4xl my-4 space'>Login</h1>
           </div>
           <div className=' flex justify-center items-center gap-1'>
-            <span class="material-symbols-outlined m-0">
+            <span className="material-symbols-outlined m-0">
               mail
             </span>
             <input type="email"
@@ -79,7 +79,7 @@ function Login() {
           </div>
 
           <div className=' flex justify-center items-center gap-1 ml-7'>
-            <span class="material-symbols-outlined m-0">
+            <span className="material-symbols-outlined m-0">
               key
             </span>
             <input type={password ? "text" : "password"}
@@ -89,7 +89,7 @@ function Login() {
               required
             />
             <div className=' absolute align cursor-pointer eye-icon flex items-center'>
-              <span class="material-symbols-outlined m-0 select-none" onClick={visible}>
+              <span className="material-symbols-outlined m-0 select-none" onClick={visible}>
                 {icon ? "visibility" : "visibility_off"}
               </span>
             </div>
